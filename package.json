@@ -1,0 +1,35 @@
+{
+  "name": "spacex-playground",
+  "version": "1.0.0",
+  "description": "Browse data from the Space X API",
+  "main": "app.js",
+  "scripts": {
+    "lint": "eslint '**/*.js' || exit 0",
+    "pretest": "npm run lint",
+    "test": "mocha --report dot --exit '**/*.spec.js' --exclude 'node_modules/**/*.js'",
+    "prestart": "npm run test",
+    "start": "node server.js",
+    "restart": "nodemon --exec 'npm run start'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheMicke/spacex-playground.git"
+  },
+  "author": "TheMicke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheMicke/spacex-playground/issues"
+  },
+  "homepage": "https://github.com/TheMicke/spacex-playground#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-mocha": "^6.2.2",
+    "mocha": "^7.0.0",
+    "nodemon": "^2.0.2",
+    "prettier-eslint": "^9.0.1"
+  }
+}
