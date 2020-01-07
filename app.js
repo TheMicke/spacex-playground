@@ -12,11 +12,12 @@ const getAllCapsules = async () => {
 };
 
 
-async function asd() {
-    const data = await getAllCapsules();
-    console.log(data);
-}
-asd();
+// Test function to test getAllCapsules... To be deleted..
+// function asd() {
+//     const data = getAllCapsules();
+//     console.log(data);
+// } 
+// asd();
 
 
 module.exports = {

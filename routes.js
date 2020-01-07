@@ -1,3 +1,5 @@
+const { getAllCapsules } = require('./app');
+
 module.exports = function(app) {
     app.get('/', (req, res) => {
         res.send('Hello World!?');
@@ -8,10 +10,7 @@ module.exports = function(app) {
     });
 
     app.get('/capsules', (req, res) => {
-        const getData = async () => {
-            
-        }
-        // console.log(app.getAllCapsules());
-        res.send('should get all capsules');
+        getAllCapsules().then(data => res.send(JSON.stringify(data)));
+        // res.send('Should be getting all capsules');
     });
 };
