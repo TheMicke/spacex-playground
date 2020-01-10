@@ -6,10 +6,10 @@
   "scripts": {
     "lint": "eslint '**/*.js' || exit 0",
     "pretest": "npm run lint",
-    "test": "mocha --report dot --exit '**/*.spec.js' --exclude 'node_modules/**/*.js'",
+    "test": "mocha --report dot --exit '**/*.spec.js' --exclude '**/node_modules/**/*.js' ",
     "prestart": "npm run test",
     "start": "node server.js",
-    "restart": "nodemon --exec 'npm run start'"
+    "restart": "nodemon --exec 'npm run start' --ignore 'client/'"
   },
   "repository": {
     "type": "git",
