@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './images/spacex-logo.png'
 import './App.css';
 
 import CapsulesList from './components/CapsulesList';
@@ -8,13 +8,10 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
+                <img src={logo} className="App-logo" alt="Spacex logo" />
                 <p>
-                    Edit <code>src/App.js</code> and save to reload.
+                    <code>Playground</code><br />
                 </p>
-                <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-                    Learn React
-                </a>
             </header>
             <CapsulesList />
         </div>
