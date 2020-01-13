@@ -1,7 +1,7 @@
 # spacex-playground
 Browse data from the Space X API
 
-How to:
+Instructions:
 1. npm install
 2. npm run start
 3. cd client
