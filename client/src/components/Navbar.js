@@ -7,8 +7,8 @@ function Navbar() {
 
     return (
     <div id="navbar" className="navbar">
-        <a href="/">Home</a>
-        <a href="/capsules">Capsules</a>
+        <NavbarButton href="/" text="Home" />
+        <NavbarButton href="/capsules" text="Capsules" />
     </div>
     );
 }
