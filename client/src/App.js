@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import Capsules from './components/Capsules';
+import CapsulesList from './components/CapsulesList';
 
 function App() {
     return (
@@ -16,7 +16,7 @@ function App() {
                     Learn React
                 </a>
             </header>
-            <Capsules />
+            <CapsulesList />
         </div>
     );
 }

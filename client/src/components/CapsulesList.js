@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function Capsules() {
+function CapsulesList() {
     const [capsules, setCapsules] = useState({});
 
     useEffect(() => {
@@ -20,4 +20,4 @@ function Capsules() {
     );
 }
 
-export default Capsules;
+export default CapsulesList;
