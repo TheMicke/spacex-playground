@@ -1,27 +1,19 @@
 .capsules-list-card-container {
-    background-color: rgba(0, 82, 135, 0.5);
+    background-color: rgba(0, 82, 135, 1);
     display: inline-block;
     border-radius: 15px;
     padding: 5px;
     margin: 10px;
     width: 40%;
-    color: #333;
-    transition: background-color 0.2s ease-in, color 0.2s ease-in;
-}
-
-.capsules-list-card-container:hover {
-    background-color: rgba(0, 82, 135, 1);
     color: #fff;
     transition: background-color 0.2s ease-in, color 0.2s ease-in;
 }
 
-/* .capsule-title {
-    color: #ddd;
+.capsules-list-card-container:hover {
+    background-color: rgba(0, 82, 135, .5);
+    color: #333;
+    transition: background-color 0.2s ease-in, color 0.2s ease-in;
 }
-
-.capsule-data {
-    color: #555;
-} */
 
 .capsule-data-heading {
     font-weight: 700;

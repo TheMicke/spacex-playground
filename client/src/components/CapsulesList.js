@@ -6,8 +6,7 @@ function CapsulesList() {
 
     useEffect(() => {
         async function fetchData() {
-            // You can await here
-            const response = await fetch('/capsules')
+            await fetch('/capsules')
             .then(res => res.json())
             .then(data => setCapsules(data));
         }
@@ -17,7 +16,6 @@ function CapsulesList() {
     return (
         <div>
             {capsules.length>0 && capsules.map(capsule => <CapsulesListCard key={capsule.capsule_serial} data={capsule} />)}
-            {console.log('capsules:', capsules)}
         </div>
     );
 }

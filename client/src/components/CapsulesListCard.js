@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './css/CapsulesListCard.css';
 
 function CapsulesListCard(props) {
@@ -8,6 +8,9 @@ function CapsulesListCard(props) {
             <p className="capsule-data"><span className="capsule-data-heading">First Launch: </span>{convertTimeStamp(props.data.original_launch_unix)}</p>
             <p className="capsule-data"><span className="capsule-data-heading">Status: </span>{props.data.status}</p>
             <p className="capsule-data"><span className="capsule-data-heading">Missions: </span>{props.data.missions.length}</p>
+            <p className="capsule-data"><span className="capsule-data-heading">Type: </span>{props.data.type}</p>
+            <p className="capsule-data"><span className="capsule-data-heading">Reuses: </span>{props.data.reuse_count}</p>
+            <p className="capsule-data"><span className="capsule-data-heading">Details: </span>{props.data.details}</p>
         </div>
     );
 }
