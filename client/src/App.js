@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './images/spacex-logo.png';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import './App.css';
 

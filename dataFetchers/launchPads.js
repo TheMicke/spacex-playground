@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const baseApiUrl = require('../app');
+const baseApiUrl ='https://api.spacexdata.com/v3/';
 
 const getAllLaunchPads = async () => {
     let data;
