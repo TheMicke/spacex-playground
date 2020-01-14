@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
-const baseApiUrl = require('../app');
+const baseApiUrl ='https://api.spacexdata.com/v3/';
 
-const getHistoricalEvents = async () => {
+const getAllHistoricalEvents = async () => {
     let data;
     await fetch(baseApiUrl + 'history').then(res => (data = res.json()));
     return data;
@@ -13,4 +13,4 @@ const getHistory = async historyId => {
     return data;
 };
 
-module.exports = { getHistoricalEvents, getHistory };
+module.exports = { getAllHistoricalEvents, getHistory };
