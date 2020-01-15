@@ -1,25 +1,54 @@
 import React from 'react';
-import './css/CapsulesListCard.css';
+import styled from 'styled-components';
+
+const CardContainer = styled.div`
+    background-color: rgba(0, 82, 135, 1);
+    display: inline-block;
+    border-radius: 15px;
+    padding: 5px;
+    padding-left: 25px;
+    margin: 10px;
+    width: 40%;
+    color: #fff;
+    text-align: left;
+    transition: background-color 0.2s ease-in, color 0.2s ease-in;
+
+    &:hover {
+        background-color: rgba(0, 82, 135, .5);
+        color: #333;
+        transition: background-color 0.2s ease-in, color 0.2s ease-in;
+    }
+`;
+
+const CardHeader = styled.h3`
+    font-weight: 700;
+`;
+
+const CardDataHeading = styled.span`
+    font-weight: 700;
+`;
 
 function CapsulesListCard(props) {
     return (
-        <div className="capsules-list-card-container">
-            <h3 className="capsule-title">{props.data.capsule_serial}</h3>
-            <p className="capsule-data"><span className="capsule-data-heading">First Launch: </span>{convertTimeStamp(props.data.original_launch_unix)}</p>
-            <p className="capsule-data"><span className="capsule-data-heading">Status: </span>{props.data.status}</p>
-            <p className="capsule-data"><span className="capsule-data-heading">Missions: </span>{props.data.missions.length}</p>
-            <p className="capsule-data"><span className="capsule-data-heading">Type: </span>{props.data.type}</p>
-            <p className="capsule-data"><span className="capsule-data-heading">Reuses: </span>{props.data.reuse_count}</p>
-            <p className="capsule-data"><span className="capsule-data-heading">Details: </span>{props.data.details}</p>
-        </div>
+        <CardContainer>
+            <CardHeader>{props.data.capsule_serial}</CardHeader>
+            
+            <p className="capsule-data"><CardDataHeading>First Launch: </CardDataHeading>{ props.data.original_launch_unix ? convertTimeStamp(props.data.original_launch_unix) : '-' }</p>
+            <p className="capsule-data"><CardDataHeading>Status: </CardDataHeading>{props.data.status}</p>
+            <p className="capsule-data"><CardDataHeading>Missions: </CardDataHeading>{props.data.missions.length}</p>
+            <p className="capsule-data"><CardDataHeading>Type: </CardDataHeading>{props.data.type}</p>
+            <p className="capsule-data"><CardDataHeading>Reuses: </CardDataHeading>{props.data.reuse_count}</p>
+            <p className="capsule-data"><CardDataHeading>Details: </CardDataHeading>{props.data.details}</p>
+        </CardContainer>
     );
 }
 
 function convertTimeStamp(timestamp) {
+    const monthConvert = ['01','02','03','04','05','06','07','08','09','10','11','12']
     const unix_timestamp = timestamp;
-    const date = new Date(unix_timestamp * 1000)
+    const date = new Date(unix_timestamp * 1000);
     const year = date.getFullYear();
-    const month = "0" + date.getMonth();
+    const month = monthConvert[date.getMonth()];
     const day = "0" + date.getDay();
     const hours = "0" + date.getHours();
     const minutes = "0" + date.getMinutes();

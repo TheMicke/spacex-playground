@@ -1,12 +1,33 @@
 import React from 'react';
-import './css/NavbarButton.css';
+import styled from 'styled-components';
+
+const ButtonContainer = styled.div`
+    height: 90%;
+    display: inline-block;
+    background-color: #005287;
+    color: #fff;
+    margin: 0 2px;
+    padding: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in, color 0.2s ease-in;
+
+    &:hover {
+        background-color: #88a8c5;
+        color: #333;
+        transition: background-color 0.2s ease-in, color 0.2s ease-in;
+    }
+`;
+
+const ButtonText = styled.p`
+    line-height: 0.75;
+`;
 
 function NavbarButton(props) {
     return (
         <a href={props.href}>
-            <div className="navbar-button">
-                <p className="navbar-button-text">{props.text}</p>
-            </div>
+            <ButtonContainer>
+                <ButtonText>{props.text}</ButtonText>
+            </ButtonContainer>
         </a>
     );
 }
