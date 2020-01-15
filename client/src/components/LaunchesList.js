@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import LaunchesListCard from './LaunchesListCard';
 import LoaderSpinner from './LoaderSpinner';
-import CapsulesListCard from './CapsulesListCard';
 
-function CapsulesList() {
+function LaunchesList() {
     const [isLoading, setIsLoading] = useState(false);
-    const [capsules, setCapsules] = useState([]);
+    const [launches, setLaunches] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
             setIsLoading(true)
-            await fetch('/capsules')
+            await fetch('/launches')
             .then(res => res.json())
-            .then(data => setCapsules(data));
-            setIsLoading(false)
-
+            .then(data => setLaunches(data));
+            setIsLoading(false);
         }
         fetchData();
     }, []);
@@ -23,9 +22,10 @@ function CapsulesList() {
             {isLoading ? 
             <LoaderSpinner /> 
             : 
-            capsules.length>0 && capsules.map(capsule => <CapsulesListCard key={capsule.capsule_serial} data={capsule} />)}
+            launches.length>0 && launches.map(launch => <LaunchesListCard key={launch.flight_number} data={launch} />)
+            }
         </div>
     );
 }
 
-export default CapsulesList;
+export default LaunchesList;

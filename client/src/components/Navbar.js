@@ -1,15 +1,23 @@
 import React from 'react';
-import './css/Navbar.css';
+import styled from 'styled-components';
 
 import NavbarButton from './NavbarButton';
 
-function Navbar() {
+const NavbarContainer = styled.div`
+    position: relative;
+    bottom: 0;
+    background-color: #37393a;
+    width: 100%;
+    height: 50px;
+`;
 
+function Navbar() {
     return (
-    <div id="navbar" className="navbar">
-        <NavbarButton href="/" text="Home" />
-        <NavbarButton href="/capsules" text="Capsules" />
-    </div>
+        <NavbarContainer>
+            <NavbarButton href="/" text="Home" />
+            <NavbarButton href="/launches" text="Launches" />
+            <NavbarButton href="/capsules" text="Capsules" />
+        </NavbarContainer>
     );
 }
 

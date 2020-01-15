@@ -6,6 +6,8 @@ import styled from 'styled-components';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import CapsulesList from './components/CapsulesList';
+import LaunchesList from './components/LaunchesList';
+import LaunchDetails from './components/LaunchDetails';
 
 const AppContainer = styled.div`
     text-align: center;
@@ -28,7 +30,8 @@ const AppLogo = styled.img`
 `;
 
 const SubHeading = styled.p`
-
+    color: #a7a9ac;
+    font-size: 1.2em;
 `;
 
 function App() {
@@ -42,8 +45,11 @@ function App() {
                 <Navbar />
 
                 <Switch>
-                    <Route path="/" component={Home} exact />
-                    <Route path="/capsules" component={CapsulesList} />
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/capsules" component={CapsulesList} />
+                    <Route exact path="/launches" component={LaunchesList} />
+                    <Route exact path="/launches/:flightNumber" component={LaunchDetails} />
+
                 </Switch>
             </AppContainer>
         </main>
