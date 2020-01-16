@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import LaunchesListCard from './LaunchesListCard';
-import LoaderSpinner from './LoaderSpinner';
-import DefaultButton from './common/DefaultButton';
+import LoaderSpinner from '../common/LoaderSpinner';
+import DefaultButton from '../common/DefaultButton';
 
 
 const TopRow = styled.div`

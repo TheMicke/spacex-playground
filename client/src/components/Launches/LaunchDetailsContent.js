@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-import LoaderSpinner from './LoaderSpinner';
-import LinkIcon from './common/LinkIcon';
-import LinkRow from './common/LinkRow';
-import ThumbnailGrid from './common/ThumbnailGrid';
-import YoutubeVideo from './YoutubeVideo';
+import LoaderSpinner from '../common/LoaderSpinner';
+import LinkIcon from '../common/LinkIcon';
+import LinkRow from '../common/LinkRow';
+import ThumbnailGrid from '../common/ThumbnailGrid';
+import YoutubeVideo from '../YoutubeVideo';
 
-import defaultMissionPatch from '../images/spacex-x.png';
+import defaultMissionPatch from '../../images/spacex-x.png';
 
 const MissionPatch = styled.img`
     max-width: 350px;
@@ -16,9 +16,6 @@ const MissionPatch = styled.img`
 `;
 
 function LaunchDetailsContent(props) {
-    const [isLoading, setIsLoading] = useState(true);
-    const [waitingForImages, setWaitingForImages] = useState(true);
-    
     return (
         <div>
             {console.log('props: LaunchDetailsContent', props)}
@@ -38,7 +35,7 @@ function LaunchDetailsContent(props) {
             <h2>Media:</h2>
             <YoutubeVideo videoId={props.launch.links?.youtube_id} />
 
-            {waitingForImages ? <LoaderSpinner /> : <ThumbnailGrid images={props.launch.links?.flickr_images} />}
+            {props.waitingForImages ? <LoaderSpinner /> : <ThumbnailGrid images={props.launch.links?.flickr_images} />}
         </div>
     );
 }

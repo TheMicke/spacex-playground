@@ -5,13 +5,13 @@ import styled from 'styled-components';
 
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import CapsulesList from './components/CapsulesList';
-import CoresList from './components/CoresList';
-import CoreDetails from './components/CoreDetails';
-import DragonsList from './components/DragonsList';
-import DragonDetails from './components/DragonDetails';
-import LaunchesList from './components/LaunchesList';
-import LaunchDetails from './components/LaunchDetails';
+import CapsulesList from './components/Capsules/CapsulesList';
+import CoresList from './components/Cores/CoresList';
+import CoreDetails from './components/Cores/CoreDetails';
+import DragonsList from './components/Dragons/DragonsList';
+import DragonDetails from './components/Dragons/DragonDetails';
+import LaunchesList from './components/Launches/LaunchesList';
+import LaunchDetails from './components/Launches/LaunchDetails';
 
 const AppContainer = styled.div`
     text-align: center;

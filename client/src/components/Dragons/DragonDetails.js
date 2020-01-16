@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-import LoaderSpinner from './LoaderSpinner';
-import LinkIcon from './common/LinkIcon';
-import ThumbnailGrid from './common/ThumbnailGrid';
-import LinkRow from './common/LinkRow';
-
-import wikipediaIcon from '../images/wikipedia_icon.svg';
+import LoaderSpinner from '../common/LoaderSpinner';
+import LinkIcon from '../common/LinkIcon';
+import ThumbnailGrid from '../common/ThumbnailGrid';
+import LinkRow from '../common/LinkRow';
 
 const Infobox = styled.div`
     
@@ -40,7 +38,7 @@ function DragonDetails(props) {
             <p>First flight: {dragon.first_flight}</p>
 
             </Infobox>
-            <LinkRow links={[<LinkIcon image={wikipediaIcon} href={dragon.wikipedia} />]} />
+            <LinkRow links={[<LinkIcon href={dragon.wikipedia} linkType='wikipedia' />]} />
 
             {waitingForImages ? <LoaderSpinner /> : <ThumbnailGrid images={dragon.flickr_images}/>}
         </div>

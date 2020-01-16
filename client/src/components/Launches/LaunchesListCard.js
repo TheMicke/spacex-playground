@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import defaultPatch from '../images/spacex-x.png';
+import defaultPatch from '../../images/spacex-x.png';
 
 const CardContainer = styled.div`
     background: rgb(0, 82, 135);
