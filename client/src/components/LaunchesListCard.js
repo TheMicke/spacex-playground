@@ -22,7 +22,7 @@ const CardContainer = styled.div`
     }
 `;
 
-const CardHeader = styled.h3`
+const CardHeading = styled.h3`
     font-weight: 700;
 `;
 
@@ -31,7 +31,7 @@ const CardDataHeading = styled.span`
 `;
 
 const MissionPatch = styled.img`
-    max-height: 50px;
+    max-width: 100px;
 `;
 
 function LaunchesListCard(props) {
@@ -39,10 +39,10 @@ function LaunchesListCard(props) {
         <a href={'/launches/' + props.data.flight_number} >
             <CardContainer>
                 {props.data.links.mission_patch_small ? <MissionPatch src={props.data.links.mission_patch_small} /> : <MissionPatch src={defaultPatch} />}
-                <CardHeader>{props.data.mission_name}</CardHeader>
+                <CardHeading>{props.data.mission_name}</CardHeading>
                 <p className="capsule-data">
                     <CardDataHeading>Launch date: </CardDataHeading>
-                    {convertTimeStamp(props.data.launch_date_unix)}
+                    {convertTimestamp(props.data.launch_date_unix)}
                 </p>
                 <p className="capsule-data">
                     <CardDataHeading>Launch success: </CardDataHeading>
@@ -53,7 +53,7 @@ function LaunchesListCard(props) {
     );
 }
 
-function convertTimeStamp(timestamp) {
+function convertTimestamp(timestamp) {
     const monthConvert = ['01','02','03','04','05','06','07','08','09','10','11','12']
     const unix_timestamp = timestamp;
     const date = new Date(unix_timestamp * 1000);

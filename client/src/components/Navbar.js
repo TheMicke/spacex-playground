@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
-import NavbarButton from './NavbarButton';
+import DefaultButton from './common/DefaultButton';
 
 const NavbarContainer = styled.div`
     position: relative;
@@ -14,9 +13,11 @@ const NavbarContainer = styled.div`
 function Navbar() {
     return (
         <NavbarContainer>
-            <NavbarButton href="/" text="Home" />
-            <NavbarButton href="/launches" text="Launches" />
-            <NavbarButton href="/capsules" text="Capsules" />
+            <DefaultButton href="/" text="Home" />
+            <DefaultButton href="/launches" text="Launches" />
+            <DefaultButton href="/capsules" text="Capsules" />
+            <DefaultButton href="/cores" text="Cores" />
+            <DefaultButton href="/dragons" text="Dragons" />
         </NavbarContainer>
     );
 }

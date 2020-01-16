@@ -33,7 +33,7 @@ function CapsulesListCard(props) {
         <CardContainer>
             <CardHeader>{props.data.capsule_serial}</CardHeader>
             
-            <p className="capsule-data"><CardDataHeading>First Launch: </CardDataHeading>{ props.data.original_launch_unix ? convertTimeStamp(props.data.original_launch_unix) : '-' }</p>
+            <p className="capsule-data"><CardDataHeading>First Launch: </CardDataHeading>{ props.data.original_launch_unix ? convertTimestamp(props.data.original_launch_unix) : '-' }</p>
             <p className="capsule-data"><CardDataHeading>Status: </CardDataHeading>{props.data.status}</p>
             <p className="capsule-data"><CardDataHeading>Missions: </CardDataHeading>{props.data.missions.length}</p>
             <p className="capsule-data"><CardDataHeading>Type: </CardDataHeading>{props.data.type}</p>
@@ -43,7 +43,7 @@ function CapsulesListCard(props) {
     );
 }
 
-function convertTimeStamp(timestamp) {
+function convertTimestamp(timestamp) {
     const monthConvert = ['01','02','03','04','05','06','07','08','09','10','11','12']
     const unix_timestamp = timestamp;
     const date = new Date(unix_timestamp * 1000);

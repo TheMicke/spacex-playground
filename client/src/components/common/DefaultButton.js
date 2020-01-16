@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ButtonContainer = styled.div`
-    height: 90%;
+    height: 45px;
     display: inline-block;
     background-color: #005287;
     color: #fff;
@@ -22,7 +22,7 @@ const ButtonText = styled.p`
     line-height: 0.75;
 `;
 
-function NavbarButton(props) {
+function DefaultButton(props) {
     return (
         <a href={props.href}>
             <ButtonContainer>
@@ -32,4 +32,4 @@ function NavbarButton(props) {
     );
 }
 
-export default NavbarButton;
+export default DefaultButton;
