@@ -6,6 +6,11 @@ import wikipediaIcon from '../../images/wikipedia_icon.svg';
 import youtubeIcon from '../../images/youtube_icon.svg';
 import articleIcon from '../../images/article_icon.svg';
 import presskitIcon from '../../images/presskit_icon.svg';
+import facebookIcon from '../../images/facebook_icon.svg';
+import flickrIcon from '../../images/flickr_icon.svg';
+import instagramIcon from '../../images/instagram_icon.svg';
+import redditIcon from '../../images/reddit_icon.svg';
+import twitterIcon from '../../images/twitter_icon.svg';
 
 const LinkImage = styled.img`
     width: 25px;
@@ -26,6 +31,21 @@ const getIcon = type => {
 
         case 'presskit':
             return presskitIcon;
+
+        case 'facebook':
+            return facebookIcon;
+
+        case 'flickr':
+            return flickrIcon;
+
+        case 'instagram':
+            return instagramIcon;
+
+        case 'reddit':
+            return redditIcon;
+
+        case 'twitter':
+            return twitterIcon;
     
         default:
             return defaultLinkIcon;
