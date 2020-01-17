@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-import LoaderSpinner from '../common/LoaderSpinner';
-import LinkIcon from '../common/LinkIcon';
-import ThumbnailGrid from '../common/ThumbnailGrid';
-import LinkRow from '../common/LinkRow';
+import LoaderSpinner from '../_common/LoaderSpinner';
+import LinkIcon from '../_common/LinkIcon';
+import ThumbnailGrid from '../_common/ThumbnailGrid';
+import LinkRow from '../_common/LinkRow';
 
 const Infobox = styled.div`
     

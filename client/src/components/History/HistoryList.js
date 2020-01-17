@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import LoaderSpinner from '../_common/LoaderSpinner';
 
-import CoresListCard from './CoresListCard';
 
-function CoresList() {
+import HistoryListCard from './HistoryListCard';
+
+function HistoryList() {
     const [isLoading, setIsLoading] = useState(false);
-    const [cores, setCores] = useState([]);
+    const [dragons, setDragons] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
             setIsLoading(true)
-            await fetch('/cores')
+            await fetch('/history')
             .then(res => res.json())
-            .then(data => setCores(data));
+            .then(data => setDragons(data));
             setIsLoading(false);
         }
         fetchData();
@@ -23,10 +24,10 @@ function CoresList() {
             {isLoading ? 
             <LoaderSpinner /> 
             : 
-            cores.length>0 && cores.map(core => <CoresListCard key={core.core_serial} data={core} />)
+            dragons.length>0 && dragons.map(dragon => <HistoryListCard key={dragon.id} data={dragon} />)
             }
         </div>
     );
 }
 
-export default CoresList;
+export default HistoryList;

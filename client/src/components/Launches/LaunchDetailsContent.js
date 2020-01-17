@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import LoaderSpinner from '../common/LoaderSpinner';
-import LinkIcon from '../common/LinkIcon';
-import LinkRow from '../common/LinkRow';
-import ThumbnailGrid from '../common/ThumbnailGrid';
+import LoaderSpinner from '../_common/LoaderSpinner';
+import LinkIcon from '../_common/LinkIcon';
+import LinkRow from '../_common/LinkRow';
+import ThumbnailGrid from '../_common/ThumbnailGrid';
 import YoutubeVideo from '../YoutubeVideo';
 
 import defaultMissionPatch from '../../images/spacex-x.png';

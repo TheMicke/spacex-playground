@@ -1,0 +1,22 @@
+.list-card {
+    background: rgb(0, 82, 135);
+    background: linear-gradient(45deg, rgba(0, 82, 135, 1) 0%, rgba(0, 117, 193, 1) 100%);
+    display: inline-block;
+    border-radius: 15px;
+    padding: 15px 5px;
+    margin: 10px;
+    width: 40%;
+    color: #fff;
+    transition: background 0.2s ease-in, color 0.2s ease-in;
+}
+
+.list-card:hover {
+    background: rgb(136, 168, 197);
+    background: linear-gradient(335deg, rgba(136, 168, 197, 1) 0%, rgba(174, 214, 251, 1) 100%);
+    color: #333;
+    transition: background 0.2s ease-in, color 0.2s ease-in;
+}
+
+.card-heading {
+    font-weight: 700
+}
