@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import LoaderSpinner from '../_common/LoaderSpinner';
 
-function ComponentName() {
+import RocketsListCard from './RocketsListCard';
+
+function RocketsList() {
     const [isLoading, setIsLoading] = useState(false);
+    const [rockets, setRockets] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
             setIsLoading(true)
-            await fetch('/endpoint')
+            await fetch('/rockets')
             .then(res => res.json())
-            .then(data => setLaunches(data));
+            .then(data => setRockets(data));
             setIsLoading(false);
         }
         fetchData();
@@ -20,10 +23,10 @@ function ComponentName() {
             {isLoading ? 
             <LoaderSpinner /> 
             : 
-            // Do something with fetched data
+            rockets.length>0 && rockets.map(rocket => <RocketsListCard key={rocket.id} data={rocket} />)
             }
         </div>
     );
 }
 
-export default ComponentName;
+export default RocketsList;

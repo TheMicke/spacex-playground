@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import LaunchesListCard from './LaunchesListCard';
-import LoaderSpinner from './LoaderSpinner';
+import LoaderSpinner from '../_common/LoaderSpinner';
 
-function LaunchesList() {
+
+import LaunchPadsListCard from './LaunchPadsListCard';
+
+function LaunchPadsList() {
     const [isLoading, setIsLoading] = useState(false);
-    const [launches, setLaunches] = useState([]);
+    const [launchPads, setLaunchPads] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
             setIsLoading(true)
-            await fetch('/launches')
+            await fetch('/launch_pads')
             .then(res => res.json())
-            .then(data => setLaunches(data));
+            .then(data => setLaunchPads(data));
             setIsLoading(false);
         }
         fetchData();
@@ -22,10 +24,10 @@ function LaunchesList() {
             {isLoading ? 
             <LoaderSpinner /> 
             : 
-            launches.length>0 && launches.map(launch => <LaunchesListCard key={launch.flight_number} data={launch} />)
+            launchPads.length>0 && launchPads.map(launchPad => <LaunchPadsListCard key={launchPad.id} data={launchPad} />)
             }
         </div>
     );
 }
 
-export default LaunchesList;
+export default LaunchPadsList;

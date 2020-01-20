@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import LoaderSpinner from '../_common/LoaderSpinner';
 
-function ComponentName() {
+import PayloadsListCard from './PayloadsListCard';
+
+function PayloadsList() {
     const [isLoading, setIsLoading] = useState(false);
+    const [payloads, setPayloads] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
             setIsLoading(true)
-            await fetch('/endpoint')
+            await fetch('/payloads')
             .then(res => res.json())
-            .then(data => setLaunches(data));
+            .then(data => setPayloads(data));
             setIsLoading(false);
         }
         fetchData();
@@ -20,10 +23,10 @@ function ComponentName() {
             {isLoading ? 
             <LoaderSpinner /> 
             : 
-            // Do something with fetched data
+            payloads.length>0 && payloads.map(payload => <PayloadsListCard key={payload.id} data={payload} />)
             }
         </div>
     );
 }
 
-export default ComponentName;
+export default PayloadsList;

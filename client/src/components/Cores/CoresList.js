@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import LoaderSpinner from '../_common/LoaderSpinner';
 
-function ComponentName() {
+import CoresListCard from './CoresListCard';
+
+function CoresList() {
     const [isLoading, setIsLoading] = useState(false);
+    const [cores, setCores] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
             setIsLoading(true)
-            await fetch('/endpoint')
+            await fetch('/cores')
             .then(res => res.json())
-            .then(data => setLaunches(data));
+            .then(data => setCores(data));
             setIsLoading(false);
         }
         fetchData();
@@ -20,10 +23,10 @@ function ComponentName() {
             {isLoading ? 
             <LoaderSpinner /> 
             : 
-            // Do something with fetched data
+            cores.length>0 && cores.map(core => <CoresListCard key={core.core_serial} data={core} />)
             }
         </div>
     );
 }
 
-export default ComponentName;
+export default CoresList;

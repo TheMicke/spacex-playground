@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import LoaderSpinner from '../_common/LoaderSpinner';
 
-function ComponentName() {
+
+import LandingPadsListCard from './LandingPadsListCard';
+
+function LandingPadsList() {
     const [isLoading, setIsLoading] = useState(false);
+    const [landingPads, setLandingPads] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
             setIsLoading(true)
-            await fetch('/endpoint')
+            await fetch('/landing_pads')
             .then(res => res.json())
-            .then(data => setLaunches(data));
+            .then(data => setLandingPads(data));
             setIsLoading(false);
         }
         fetchData();
@@ -20,10 +24,10 @@ function ComponentName() {
             {isLoading ? 
             <LoaderSpinner /> 
             : 
-            // Do something with fetched data
+            landingPads.length>0 && landingPads.map(landingPad => <LandingPadsListCard key={landingPad.id} data={landingPad} />)
             }
         </div>
     );
 }
 
-export default ComponentName;
+export default LandingPadsList;
