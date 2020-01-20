@@ -6,14 +6,14 @@ import HistoryListCard from './HistoryListCard';
 
 function HistoryList() {
     const [isLoading, setIsLoading] = useState(false);
-    const [dragons, setDragons] = useState([]);
+    const [histories, setHistories] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
             setIsLoading(true)
             await fetch('/history')
             .then(res => res.json())
-            .then(data => setDragons(data));
+            .then(data => setHistories(data));
             setIsLoading(false);
         }
         fetchData();
@@ -24,7 +24,7 @@ function HistoryList() {
             {isLoading ? 
             <LoaderSpinner /> 
             : 
-            dragons.length>0 && dragons.map(dragon => <HistoryListCard key={dragon.id} data={dragon} />)
+            histories.length>0 && histories.map(history => <HistoryListCard key={history.id} data={history} />)
             }
         </div>
     );

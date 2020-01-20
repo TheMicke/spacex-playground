@@ -6,9 +6,7 @@ import LinkIcon from '../_common/LinkIcon';
 import ThumbnailGrid from '../_common/ThumbnailGrid';
 import LinkRow from '../_common/LinkRow';
 
-const Infobox = styled.div`
-    
-`;
+const Infobox = styled.div``;
 
 function DragonDetails(props) {
     const [isLoading, setIsLoading] = useState(false);

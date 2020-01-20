@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
 
 import LoaderSpinner from '../_common/LoaderSpinner';
 import LaunchDetailsContent from './LaunchDetailsContent';

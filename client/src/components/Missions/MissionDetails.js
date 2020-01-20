@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import LoaderSpinner from '../_common/LoaderSpinner';
 
-function MissionDetails() {
+import MissionDetailsContent from './MissionDetailsContent';
 
-    return (
-        <p>MissionDetails component</p>
-    );
+function MissionDetails(props) {
+    const [isLoading, setIsLoading] = useState(false);
+    const [mission, setMission] = useState([]);
+
+    useEffect(() => {
+        async function fetchData() {
+            const missionId = props.match.params.missionId;
+            setIsLoading(true);
+            await fetch(`/missions/${missionId}`)
+                .then(res => res.json())
+                .then(data => setMission(data));
+            setIsLoading(false);
+        }
+        fetchData();
+    }, [props.match.params.missionId]);
+
+    return <div>
+        {isLoading ? <LoaderSpinner /> : <MissionDetailsContent mission={mission} /> }
+        </div>;
 }
 
 export default MissionDetails;
