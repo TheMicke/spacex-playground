@@ -1,5 +1,3 @@
-import React from 'react';
-
 function UnixTimeConverter(prop) {
     const timestamp = prop.timestamp;
     const unix_timestamp = timestamp;

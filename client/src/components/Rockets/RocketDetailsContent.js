@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import LoaderSpinner from '../_common/LoaderSpinner';
+import React from 'react';
 import ThumbnailGrid from '../_common/ThumbnailGrid';
 
 function RocketDetailsContent(props) {
