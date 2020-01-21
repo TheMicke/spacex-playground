@@ -16,26 +16,28 @@ const MissionPatch = styled.img`
 `;
 
 function LaunchDetailsContent(props) {
+    const launch = props.launch;
+
     return (
         <div>
             {console.log('props: LaunchDetailsContent', props)}
-            {props.launch.links?.mission_patch ? <MissionPatch src={props.launch.links?.mission_patch} /> : <MissionPatch src={defaultMissionPatch} placeholderPatch />}
-            <p>{props.launch.mission_name}</p>
+            {launch.links?.mission_patch ? <MissionPatch src={launch.links?.mission_patch} /> : <MissionPatch src={defaultMissionPatch} placeholderPatch />}
+            <p>{launch.mission_name}</p>
             <LinkRow
                 links={[
-                    props.launch.links?.article_link ? <LinkIcon key={props.launch.links?.article_link} href={props.launch.links?.article_link} linkType="article" /> : '',
-                    props.launch.links?.wikipedia ? <LinkIcon key={props.launch.links?.wikipedia} href={props.launch.links?.wikipedia} linkType="wikipedia" /> : '',
-                    props.launch.links?.video_link ? <LinkIcon key={props.launch.links?.video_link} href={props.launch.links?.video_link} linkType="youtube" /> : '',
-                    props.launch.links?.presskit ? <LinkIcon key={props.launch.links?.presskit} href={props.launch.links?.presskit} linkType="presskit" /> : '',
+                    launch.links?.article_link ? <LinkIcon key={launch.links?.article_link} href={launch.links?.article_link} linkType="article" /> : '',
+                    launch.links?.wikipedia ? <LinkIcon key={launch.links?.wikipedia} href={launch.links?.wikipedia} linkType="wikipedia" /> : '',
+                    launch.links?.video_link ? <LinkIcon key={launch.links?.video_link} href={launch.links?.video_link} linkType="youtube" /> : '',
+                    launch.links?.presskit ? <LinkIcon key={launch.links?.presskit} href={launch.links?.presskit} linkType="presskit" /> : '',
                 ]}
             />
 
-            <p>{props.launch.launch_success ? 'Successful launch' : 'Failed launch: ' + props.launch.launch_failure_details?.reason}</p>
+            <p>{launch.launch_success ? 'Successful launch' : 'Failed launch: ' + launch.launch_failure_details?.reason}</p>
 
-            <h2>Media:</h2>
-            <YoutubeVideo videoId={props.launch.links?.youtube_id} />
+            {launch.links?.youtube_id || launch.links?.flickr_images[0] ? <h2>Media:</h2> : ''}
+            {launch.links?.youtube_id ? <YoutubeVideo videoId={launch.links?.youtube_id} /> : ''}
 
-            {props.waitingForImages ? <LoaderSpinner /> : <ThumbnailGrid images={props.launch.links?.flickr_images} />}
+            {props.waitingForImages ? <LoaderSpinner /> : <ThumbnailGrid images={launch.links?.flickr_images} />}
         </div>
     );
 }

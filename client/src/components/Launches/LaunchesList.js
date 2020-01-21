@@ -31,8 +31,8 @@ function LaunchesList() {
     return (
         <div>
             <TopRow>
-                <DefaultButton href='/launches/upcoming' text='Upcoming launch' />
                 <DefaultButton href='/launches/latest' text='Latest launch' />
+                <DefaultButton href='/launches/next' text='Next launch' />
             </TopRow>
             {isLoading ? 
             <LoaderSpinner /> 
