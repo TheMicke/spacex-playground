@@ -23,9 +23,10 @@ function LaunchesListCard(props) {
                 {props.data.links.mission_patch_small ? <MissionPatch src={props.data.links.mission_patch_small} /> : <MissionPatch src={defaultPatch} />}
                 <h3>{props.data.mission_name}</h3>
                 <p>
-                    <span className="card-heading">Launch date: </span>
+                    <span className="card-heading">Launch date{props.data.launch_date_unix-(Math.floor(Date.now() / 1000)) > 0 ? '(planned): ' : ': '}</span>
                     <UnixTimeConverter timestamp={props.data.launch_date_unix} />
                 </p>
+
                 <p className="capsule-data">
                     <span className="card-heading">Launch success: </span>
                     {props.data.launch_success ? <IconLaunchListCard src={iconSuccess} /> : <IconLaunchListCard src={iconFail}/>}
