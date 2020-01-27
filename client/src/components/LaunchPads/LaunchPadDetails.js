@@ -11,7 +11,7 @@ function LaunchPadDetails(props) {
         async function fetchData() {
             const launchPadId = props.match.params.siteId;
             setIsLoading(true);
-            await fetch(`/launch_pads/${launchPadId}`)
+            await fetch(`/api/v3/launch_pads/${launchPadId}`)
                 .then(res => res.json())
                 .then(data => setLaunchPad(data));
             setIsLoading(false);

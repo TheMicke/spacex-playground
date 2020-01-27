@@ -10,7 +10,7 @@ function MissionsList() {
     useEffect(() => {
         async function fetchData() {
             setIsLoading(true)
-            await fetch('/missions')
+            await fetch('/api/v3/missions')
             .then(res => res.json())
             .then(data => setMissions(data));
             setIsLoading(false);

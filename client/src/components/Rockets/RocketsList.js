@@ -10,7 +10,7 @@ function RocketsList() {
     useEffect(() => {
         async function fetchData() {
             setIsLoading(true)
-            await fetch('/rockets')
+            await fetch('/api/v3/rockets')
             .then(res => res.json())
             .then(data => setRockets(data));
             setIsLoading(false);

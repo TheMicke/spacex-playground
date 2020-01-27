@@ -11,11 +11,11 @@ function ShipDetails(props) {
         async function fetchData() {
             const shipId = props.match.params.shipId;
             setIsLoading(true);
-            await fetch(`/ships/${shipId}`)
+            await fetch(`/api/v3/ships/${shipId}`)
                 .then(res => res.json())
                 .then(data => setShip(data));
             setIsLoading(false);
-            setWaitingForImages(false)
+            setWaitingForImages(false);
         }
         fetchData();
     }, [props.match.params.shipId]);

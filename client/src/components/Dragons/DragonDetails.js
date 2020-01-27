@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
-
+import DragonDetailsContent from './DragonDetailsContent';
 import LoaderSpinner from '../_common/LoaderSpinner';
-import LinkIcon from '../_common/LinkIcon';
-import ThumbnailGrid from '../_common/ThumbnailGrid';
-import LinkRow from '../_common/LinkRow';
-
-const Infobox = styled.div``;
 
 function DragonDetails(props) {
     const [isLoading, setIsLoading] = useState(false);
@@ -17,7 +11,7 @@ function DragonDetails(props) {
         async function fetchData() {
             setIsLoading(true);
             const dragonId = props.match.params.dragonId;
-            await fetch(`/dragons/${dragonId}`)
+            await fetch(`/api/v3/dragons/${dragonId}`)
                 .then(res => res.json())
                 .then(data => setDragon(data))
                 .catch(err => console.log(err));
@@ -30,15 +24,7 @@ function DragonDetails(props) {
 
     return (
         <div>
-            {isLoading ? <LoaderSpinner /> : ''}
-            <h2>{dragon.name}</h2>
-            <Infobox>
-            <p>First flight: {dragon.first_flight}</p>
-
-            </Infobox>
-            <LinkRow links={[<LinkIcon href={dragon.wikipedia} linkType='wikipedia' />]} />
-
-            {waitingForImages ? <LoaderSpinner /> : <ThumbnailGrid images={dragon.flickr_images}/>}
+            {isLoading ? <LoaderSpinner /> : <DragonDetailsContent dragon={dragon} waitingForImages={waitingForImages} /> }
         </div>
     );
 }

@@ -7,7 +7,7 @@ function ComponentName() {
     useEffect(() => {
         async function fetchData() {
             setIsLoading(true)
-            await fetch('/endpoint')
+            await fetch('/api/v3/endpoint')
             .then(res => res.json())
             .then(data => setLaunches(data));
             setIsLoading(false);
@@ -20,7 +20,7 @@ function ComponentName() {
             {isLoading ? 
             <LoaderSpinner /> 
             : 
-            // Do something with fetched data
+            '' // Do something with fetched data
             }
         </div>
     );

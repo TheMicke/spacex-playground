@@ -10,7 +10,7 @@ function PayloadsList() {
     useEffect(() => {
         async function fetchData() {
             setIsLoading(true)
-            await fetch('/payloads')
+            await fetch('/api/v3/payloads')
             .then(res => res.json())
             .then(data => setPayloads(data));
             setIsLoading(false);

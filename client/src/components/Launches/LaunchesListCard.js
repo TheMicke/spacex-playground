@@ -4,9 +4,16 @@ import '../_css/list-view.css';
 
 import UnixTimeConverter from '../_common/UnixTimeConverter';
 import defaultPatch from '../../images/spacex-x.png';
+import iconSuccess from '../../images/icon_success.svg';
+import iconFail from '../../images/icon_fail.svg';
 
 const MissionPatch = styled.img`
     max-width: 100px;
+`;
+
+const IconLaunchListCard = styled.img`
+    max-width: 25px;
+    max-height: 25px;
 `;
 
 function LaunchesListCard(props) {
@@ -21,7 +28,7 @@ function LaunchesListCard(props) {
                 </p>
                 <p className="capsule-data">
                     <span className="card-heading">Launch success: </span>
-                    {props.data.launch_success ? 'Yes' : 'No'}
+                    {props.data.launch_success ? <IconLaunchListCard src={iconSuccess} /> : <IconLaunchListCard src={iconFail}/>}
                 </p>
             </div>
         </a>

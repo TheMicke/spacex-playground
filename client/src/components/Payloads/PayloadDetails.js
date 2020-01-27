@@ -12,7 +12,7 @@ function PayloadDetails(props) {
         async function fetchData() {
             const payloadId = props.match.params.payloadId;
             setIsLoading(true);
-            await fetch(`/payloads/${payloadId}`)
+            await fetch(`/api/v3/payloads/${payloadId}`)
                 .then(res => res.json())
                 .then(data => setPayload(data));
             setIsLoading(false);

@@ -1,11 +1,12 @@
 import React from 'react';
 import LinkIcons from '../_common/LinkIcon';
+import '../_css/details-view.css';
 
 function MissionDetailsContent(props) {
-    console.log(props);
+    console.log('MissionDetailsContent', props);
     const mission = props.mission;
     return (
-        <div>
+        <div className="info-text">
             <h3>{mission.mission_name}</h3>
             <p>Mission id: {mission.mission_id}</p>
             <p>Manufacturers: {mission.manufacturers}</p>

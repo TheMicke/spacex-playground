@@ -11,7 +11,7 @@ function MissionDetails(props) {
         async function fetchData() {
             const missionId = props.match.params.missionId;
             setIsLoading(true);
-            await fetch(`/missions/${missionId}`)
+            await fetch(`/api/v3/missions/${missionId}`)
                 .then(res => res.json())
                 .then(data => setMission(data));
             setIsLoading(false);

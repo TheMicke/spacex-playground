@@ -11,7 +11,7 @@ function HistoryList() {
     useEffect(() => {
         async function fetchData() {
             setIsLoading(true)
-            await fetch('/history')
+            await fetch('/api/v3/history')
             .then(res => res.json())
             .then(data => setHistories(data));
             setIsLoading(false);

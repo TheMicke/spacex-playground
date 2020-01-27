@@ -11,7 +11,7 @@ function LaunchPadsList() {
     useEffect(() => {
         async function fetchData() {
             setIsLoading(true)
-            await fetch('/launch_pads')
+            await fetch('/api/v3/launch_pads')
             .then(res => res.json())
             .then(data => setLaunchPads(data));
             setIsLoading(false);

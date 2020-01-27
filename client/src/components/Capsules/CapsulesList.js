@@ -8,22 +8,19 @@ function CapsulesList() {
 
     useEffect(() => {
         async function fetchData() {
-            setIsLoading(true)
-            await fetch('/capsules')
-            .then(res => res.json())
-            .then(data => setCapsules(data));
-            setIsLoading(false)
-
+            setIsLoading(true);
+            await fetch('/api/v3/capsules')
+                .then(res => res.json())
+                .then(data => setCapsules(data));
+            setIsLoading(false);
         }
         fetchData();
     }, []);
 
     return (
         <div>
-            {isLoading ? 
-            <LoaderSpinner /> 
-            : 
-            capsules.length>0 && capsules.map(capsule => <CapsulesListCard key={capsule.capsule_serial} data={capsule} />)}
+        {console.log(capsules)}
+            {isLoading ? <LoaderSpinner /> : capsules.length > 0 && capsules.map(capsule => <CapsulesListCard key={capsule.capsule_serial} data={capsule} />)}
         </div>
     );
 }

@@ -11,7 +11,7 @@ function Roadster() {
     useEffect(() => {
         async function fetchData() {
             setIsLoading(true)
-            await fetch('/roadster')
+            await fetch('/api/v3/roadster')
             .then(res => res.json())
             .then(data => setRoadster(data));
             setIsLoading(false);

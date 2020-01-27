@@ -1,10 +1,11 @@
 import React from 'react';
+import '../_css/details-view.css';
 
 function PayloadDetailsContent(props) {
-    console.log(props);
+    console.log('PayloadDetailsContent', props);
     const payload = props.payload;
     return (
-        <div>
+        <div className="info-text">
             <h3>{payload.payload_id}</h3>
             <p>Customer: {payload.customers}</p>
             <p>Nationality: {payload.nationality}</p>

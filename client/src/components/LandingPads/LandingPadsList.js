@@ -11,7 +11,7 @@ function LandingPadsList() {
     useEffect(() => {
         async function fetchData() {
             setIsLoading(true)
-            await fetch('/landing_pads')
+            await fetch('/api/v3/landing_pads')
             .then(res => res.json())
             .then(data => setLandingPads(data));
             setIsLoading(false);

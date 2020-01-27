@@ -1,44 +1,33 @@
 import React from 'react';
-import styled from 'styled-components';
 import LinkIcon from '../_common/LinkIcon';
-
-const InfoText = styled.p`
-    font-style: oblique;
-`;
-
-const InfoHeading = styled.span`
-    font-weight: 700;
-    font-style: normal;
-`;
+import '../_css/details-view.css';
 
 function InfoContent(props) {
-    console.log(props.data);
-    const info = props.data;
-    
+    const info = props.info;
+
     return (
-        <div>
-            <h2>Info about {info.name}</h2>
-    <InfoText>{info.summary}</InfoText>
-    <InfoText><InfoHeading>Founder: </InfoHeading>{info.founder}</InfoText>
-    <InfoText><InfoHeading>Founded: </InfoHeading>{info.founded}</InfoText>
-    <InfoText><InfoHeading>Employees: </InfoHeading>{info.employees}</InfoText>
-    <InfoText><InfoHeading>Launch sites: </InfoHeading>{info.launch_sites}</InfoText>
-    <InfoText><InfoHeading>Test sites: </InfoHeading>{info.test_sites}</InfoText>
-    <InfoText><InfoHeading>CEO: </InfoHeading>{info.ceo}</InfoText>
-    <InfoText><InfoHeading>CTO: </InfoHeading>{info.cto}</InfoText>
-    <InfoText><InfoHeading>COO: </InfoHeading>{info.coo}</InfoText>
-    <InfoText><InfoHeading>CTO of Propulsion: </InfoHeading>{info.cto_propulsion}</InfoText>
-    <InfoText><InfoHeading>Valuation: </InfoHeading>${info.valuation}</InfoText>
-    <InfoText><InfoHeading>Headquarters: </InfoHeading>{info.headquarters?.city}, {info.headquarters?.state}</InfoText>
-    <InfoText><InfoHeading>Links:</InfoHeading> <br />
-        <LinkIcon linkType="website" href={info.links?.website} />
-        <LinkIcon linkType="flickr" href={info.links?.flickr} />
-        <LinkIcon linkType="twitter" href={info.links?.twitter} />
-    </InfoText>
-
-
-
-
+        <div className="info-block">
+            <h2>{info.name} company info</h2>
+            <p>{info.summary}</p>
+            <p><span className="info-text-heading">Founder: </span>{info.founder}</p>
+            <p><span className="info-text-heading">Founded: </span>{info.founded}</p>
+            <p><span className="info-text-heading">Employees: </span>{info.employees}</p>
+            <p><span className="info-text-heading">Launch sites: </span>{info.launch_sites}</p>
+            <p><span className="info-text-heading">Test sites: </span>{info.test_sites}</p>
+            <p><span className="info-text-heading">CEO: </span>{info.ceo}</p>
+            <p><span className="info-text-heading">CTO: </span>{info.cto}</p>
+            <p><span className="info-text-heading">COO: </span>{info.coo}</p>
+            <p><span className="info-text-heading">CTO of Propulsion: </span>{info.cto_propulsion}</p>
+            <p><span className="info-text-heading">Valuation: </span>${info.valuation}</p>
+            <p><span className="info-text-heading">Headquarters: </span>{info.headquarters?.city}, {info.headquarters?.state}</p>
+            
+            <p><span className="info-text-heading">Links: </span> <br />
+                <LinkIcon linkType="website" href={info.links?.website} />
+                <LinkIcon linkType="flickr" href={info.links?.flickr} />
+                <LinkIcon linkType="twitter" href={info.links?.twitter} />
+            </p>
+            
+            <br />
         </div>
     );
 }

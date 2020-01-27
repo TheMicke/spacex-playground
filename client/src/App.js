@@ -7,6 +7,7 @@ import Home from './components/Home';
 import Navbar from './components/Navbar';
 
 import CapsulesList from './components/Capsules/CapsulesList';
+import CapsuleDetails from './components/Capsules/CapsuleDetails';
 import CoresList from './components/Cores/CoresList';
 import CoreDetails from './components/Cores/CoreDetails';
 import DragonsList from './components/Dragons/DragonsList';
@@ -69,6 +70,7 @@ function App() {
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route exact path="/capsules" component={CapsulesList} />
+                        <Route exact path="/capsules/:capsuleSerial" component={CapsuleDetails} />
                         <Route exact path="/cores" component={CoresList} />
                         <Route exact path="/cores/:coreSerial" component={CoreDetails} />
                         <Route exact path="/dragons" component={DragonsList} />

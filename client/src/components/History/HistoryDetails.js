@@ -11,7 +11,7 @@ function HistoryDetails(props) {
         async function fetchData() {
             const historyId = props.match.params.historyId;
             setIsLoading(true);
-            await fetch(`/history/${historyId}`)
+            await fetch(`/api/v3/history/${historyId}`)
                 .then(res => res.json())
                 .then(data => setHistory(data));
             setIsLoading(false);

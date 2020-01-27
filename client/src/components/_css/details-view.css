@@ -1,0 +1,18 @@
+.info-block {
+    margin: 0px auto 50px auto;
+    text-align: left;
+    font-style: oblique;
+}
+
+.info-inner-block {
+    margin-bottom: 25px;
+}
+
+.info-text {
+    text-align: left;
+}
+
+.info-text-heading {
+    font-weight: 700;
+    font-style: normal;
+}

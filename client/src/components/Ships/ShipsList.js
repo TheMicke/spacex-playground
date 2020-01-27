@@ -9,24 +9,16 @@ function ShipsList() {
 
     useEffect(() => {
         async function fetchData() {
-            setIsLoading(true)
-            await fetch('/ships')
-            .then(res => res.json())
-            .then(data => setShips(data));
+            setIsLoading(true);
+            await fetch('/api/v3/ships')
+                .then(res => res.json())
+                .then(data => setShips(data));
             setIsLoading(false);
         }
         fetchData();
     }, []);
 
-    return (
-        <div>
-            {isLoading ? 
-            <LoaderSpinner /> 
-            : 
-            ships.length>0 && ships.map(ship => <ShipsListCard key={ship.ship_id} data={ship} />)
-            }
-        </div>
-    );
+    return <div>{isLoading ? <LoaderSpinner /> : ships.length > 0 && ships.map(ship => <ShipsListCard key={ship.ship_id} data={ship} />)}</div>;
 }
 
 export default ShipsList;
