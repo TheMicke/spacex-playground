@@ -7,7 +7,7 @@ function LaunchPadDetailsContent(props) {
     let launchPad = props.data;
     
     return (
-        <div className="info-text">
+        <div className="info-block">
             <h3>{launchPad.name}</h3>
             <p>Full name: {launchPad.site_name_long}</p>
             <p>Launch Pad id: {launchPad.site_id}</p>

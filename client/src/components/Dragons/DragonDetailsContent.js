@@ -1,6 +1,7 @@
 import React from 'react';
 import LinkIcon from '../_common/LinkIcon';
 import ThumbnailGrid from '../_common/ThumbnailGrid';
+import TemperatureConverter from '../_common/TemperatureConverter';
 import LoaderSpinner from '../_common/LoaderSpinner';
 import '../_css/details-view.css';
 
@@ -11,7 +12,7 @@ function DragonDetailsContent(props) {
 
     return (
         <div>
-            <div className="info-text">
+            <div className="info-block">
                 <h2>{dragon.name}</h2>
                 <LinkIcon href={dragon.wikipedia} linkType="wikipedia" key={Math.random()} />
                 <div className="info-block">
@@ -31,7 +32,7 @@ function DragonDetailsContent(props) {
                 <div className="info-block">
                     <h3 className="info-text-heading">Heat shield</h3>
                     <p><span className="info-text-heading">Material:</span> {dragon.heat_shield?.material}</p>
-                    <p><span className="info-text-heading">Max temprature:</span> {dragon.heat_shield?.temp_degrees}°</p>
+                    <p><span className="info-text-heading">Max temprature:</span> <TemperatureConverter direction="f2c" temp={dragon.heat_shield?.temp_degrees} />°c | {dragon.heat_shield?.temp_degrees}°F</p>
                     <p><span className="info-text-heading">Diameter:</span> {dragon.heat_shield?.size_meters} m</p>
                     <p><span className="info-text-heading">Developement partner:</span> {dragon.heat_shield?.dev_partner}</p>
                 </div>

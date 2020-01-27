@@ -23,7 +23,7 @@ function MissionsList() {
             {isLoading ? 
             <LoaderSpinner /> 
             : 
-            missions.length>0 && missions.map(mission => <MissionsListCard key={mission.id} data={mission} />)
+            missions.length>0 && missions.map(mission => <MissionsListCard key={mission.mission_id} data={mission} />)
             }
         </div>
     );

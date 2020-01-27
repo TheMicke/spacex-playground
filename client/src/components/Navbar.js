@@ -7,7 +7,8 @@ const NavbarContainer = styled.div`
     bottom: 0;
     background-color: #37393a;
     width: 100%;
-    height: 50px;
+    height: 55px;
+    margin-bottom: 50px;
 `;
 
 function Navbar() {

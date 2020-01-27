@@ -23,7 +23,7 @@ function PayloadsList() {
             {isLoading ? 
             <LoaderSpinner /> 
             : 
-            payloads.length>0 && payloads.map(payload => <PayloadsListCard key={payload.id} data={payload} />)
+            payloads.length>0 && payloads.map(payload => <PayloadsListCard key={Math.random()} data={payload} />)
             }
         </div>
     );
