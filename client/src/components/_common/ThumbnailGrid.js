@@ -2,14 +2,24 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ImageContainer = styled.div`
-    
+    margin: auto;
 `;
 
 const Image = styled.img`
     object-fit: cover;
-    height: 250px;
-    width: 250px;
+    height: 125px;
+    width: 125px;
     margin: 5px;
+
+    @media screen and (min-width: 768px) {
+        height: 175px;
+        width: 175px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        height: 225px;
+        width: 225px;
+    }
 `;
 
 function ThumbnailGrid(props) {

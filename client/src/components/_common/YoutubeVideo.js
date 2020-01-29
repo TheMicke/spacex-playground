@@ -3,8 +3,9 @@ import Youtube from 'react-youtube-embed';
 import styled from 'styled-components';
 
 const VideoContainer = styled.div`
-    width: 896px;
-    height: 504px;
+    width: 100%;
+    max-width: 896px;
+    height: auto;
     margin: 50px auto;
     pointer-event: none;
 `;

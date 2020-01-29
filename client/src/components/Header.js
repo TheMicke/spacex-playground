@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import logo from '../images/spacex-playground.png';
-import Navbar from './Navbar';
+import Navbar from './Navbar/Navbar';
 
 
 const AppHeader = styled.header`

@@ -1,11 +1,11 @@
 .list-card {
     background: rgb(0, 82, 135);
     background: linear-gradient(45deg, rgba(0, 82, 135, 1) 0%, rgba(0, 117, 193, 1) 100%);
-    display: inline-block;
+    display: block;
     border-radius: 15px;
     padding: 15px 5px;
-    margin: 10px;
-    width: 40%;
+    margin: 10px auto;
+    width: 95%;
     color: #fff;
     transition: background 0.2s ease-in, color 0.2s ease-in;
 }
@@ -19,4 +19,20 @@
 
 .card-heading {
     font-weight: 700
+}
+
+
+@media screen and (min-width: 768px) {
+    .list-card {
+        display: inline-block;
+        padding: 15px 5px;
+        margin: 10px;
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .list-card {
+        width: 30%;
+    }
 }

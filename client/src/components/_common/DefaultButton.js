@@ -9,6 +9,8 @@ const ButtonContainer = styled.div`
     margin: 0 2px;
     padding: 0 10px;
     border-radius: 5px;
+    border: 0;
+    font-size: 1em;
     transition: background-color 0.2s ease-in, color 0.2s ease-in;
 
     &:hover {

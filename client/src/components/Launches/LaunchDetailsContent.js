@@ -9,8 +9,10 @@ import ThumbnailGrid from '../_common/ThumbnailGrid';
 import YoutubeVideo from '../_common/YoutubeVideo';
 
 import defaultMissionPatch from '../../images/spacex-x.png';
+import UnixTimeConverter from '../_common/UnixTimeConverter';
 
 const MissionPatch = styled.img`
+    width: 90%;
     max-width: 350px;
     margin: 25px auto;
     margin-right: ${props => (props.placeholderPatch ? '-175px' : '0')};
@@ -21,27 +23,31 @@ function LaunchDetailsContent(props) {
     const launch = props.launch;
 
     return (
-        <div>
-            <div className="info-block">
+        <div className="content-container">
+            <div className="data-block">
             {launch.links?.mission_patch ? <MissionPatch src={launch.links?.mission_patch} /> : <MissionPatch src={defaultMissionPatch} placeholderPatch />}
                 <h2>{launch.mission_name}</h2>
                 <LinkRow
                     links={[
-                        launch.links?.article_link ? <LinkIcon key={launch.links?.article_link} href={launch.links?.article_link} linkType="article" /> : '',
-                        launch.links?.wikipedia ? <LinkIcon key={launch.links?.wikipedia} href={launch.links?.wikipedia} linkType="wikipedia" /> : '',
-                        launch.links?.video_link ? <LinkIcon key={launch.links?.video_link} href={launch.links?.video_link} linkType="youtube" /> : '',
-                        launch.links?.presskit ? <LinkIcon key={launch.links?.presskit} href={launch.links?.presskit} linkType="presskit" /> : '',
-                        launch.links?.reddit_campaign ? <LinkIcon key={launch.links?.reddit_campaign} href={launch.links?.reddit_campaign} linkType="reddit" /> : '',
-                        launch.links?.reddit_launch ? <LinkIcon key={launch.links?.reddit_launch} href={launch.links?.reddit_launch} linkType="reddit" /> : '',
-                        launch.links?.reddit_recovery ? <LinkIcon key={launch.links?.reddit_recovery} href={launch.links?.reddit_recovery} linkType="reddit" /> : '',
+                        launch.links?.article_link ? <LinkIcon key={launch.links?.article_link} href={launch.links?.article_link} linkType="article" hoverText="Article" /> : '',
+                        launch.links?.wikipedia ? <LinkIcon key={launch.links?.wikipedia} href={launch.links?.wikipedia} linkType="wikipedia" hoverText="Wikipedia" /> : '',
+                        launch.links?.video_link ? <LinkIcon key={launch.links?.video_link} href={launch.links?.video_link} linkType="youtube" hoverText="Video"/> : '',
+                        launch.links?.presskit ? <LinkIcon key={launch.links?.presskit} href={launch.links?.presskit} linkType="presskit" hoverText="Press kit"/> : '',
+                        launch.links?.reddit_campaign ? <LinkIcon key={launch.links?.reddit_campaign} href={launch.links?.reddit_campaign} linkType="reddit" hoverText="Reddit: campaign"/> : '',
+                        launch.links?.reddit_launch ? <LinkIcon key={launch.links?.reddit_launch} href={launch.links?.reddit_launch} linkType="reddit" hoverText="Reddit: launch"/> : '',
+                        launch.links?.reddit_recovery ? <LinkIcon key={launch.links?.reddit_recovery} href={launch.links?.reddit_recovery} linkType="reddit" hoverText="Reddit: recovery"/> : '',
                     ]}
                 />
 
-                <p><span className="info-text-heading">Launch success: </span>{launch.launch_success ? 'Yes' : 'No. Reason: ' + launch.launch_failure_details?.reason}</p>
-                {launch.launch_success ? '' : <p><span className="info-text-heading">Fail reason: </span>{launch.launch_failure_details?.reason}</p> }
-                <p><span className="info-text-heading">Rocket: </span><a href={"/rockets/" + launch.rocket?.rocket_id}>{launch.rocket?.rocket_name}</a></p>
-                <p><span className="info-text-heading">Launch site: </span> <a href={"/launch_pads/" + launch.launch_site?.site_id }>{launch.launch_site?.site_name_long}</a></p>
-                <p><span className="info-text-heading"></span></p>
+                
+                <p><span className="text-heading">Launch date </span>{ 
+                (Math.floor(Date.now()/1000)) > launch.launch_date_unix ? '(planned): ' : '' }<UnixTimeConverter timestamp={launch.launch_date_unix} />
+                </p>
+                { (Math.floor(Date.now()/1000)) > launch.launch_date_unix ? '' : <p><span className="text-heading">Launch success: </span>{launch.launch_success ? 'Yes' : 'No. Reason: ' + launch.launch_failure_details?.reason}</p>}
+                <p><span className="text-heading">Rocket: </span><a href={"/rockets/" + launch.rocket?.rocket_id}>{launch.rocket?.rocket_name}</a></p>
+                <p><span className="text-heading">Launch site: </span> <a href={"/launch_pads/" + launch.launch_site?.site_id }>{launch.launch_site?.site_name_long}</a></p>
+                <p><span className="text-heading">Flight number: </span>{launch.flight_number}</p>
+                <p><span className="text-heading">Details: </span>{launch.details}</p>
             </div>
 
             {launch.links?.youtube_id || launch.links?.flickr_images[0] ? <h2>Media:</h2> : ''}

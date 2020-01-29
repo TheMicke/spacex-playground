@@ -31,6 +31,7 @@ import ShipDetails from './components/Ships/ShipDetails';
 
 const AppContainer = styled.div`
     text-align: center;
+    background-color: #fff;
 `;
 
 const PageContainer = styled.div`

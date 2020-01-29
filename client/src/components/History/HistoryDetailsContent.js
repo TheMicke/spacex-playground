@@ -9,16 +9,18 @@ function HistoryDetailsContent(props) {
     let history = props.history;
 
     return (
-        <div className="info-block">
-            <h3><span className="info-text-heading">{history.title}</span></h3>
-            <LinkRow links={[
-                history.links?.reddit ? <LinkIcon key={history.links?.reddit} href={history.links?.reddit} linkType="reddit" /> : '',
-                history.links?.article ? <LinkIcon key={history.links?.article} href={history.links?.article} linkType="article" /> : '',
-                history.links?.wikipedia ? <LinkIcon key={history.links?.wikipedia} href={history.links?.wikipedia} linkType="wikipedia" /> : '',
-            ]}/>
-            <p><span className="info-text-heading">Date: </span><UnixTimeConverter timestamp={history.event_date_unix} /></p>
-            <p><span className="info-text-heading">Flight number: </span>{history.flight_number ? <a href={"/launches/"+history.flight_number}>{history.flight_number}</a> : '-'}</p>
-            <p><span className="info-text-heading">Details: </span>{history.details}</p>
+        <div className="data-block">
+            <div className="data-block">
+                <h3><span className="text-heading">{history.title}</span></h3>
+                <LinkRow links={[
+                    history.links?.reddit ? <LinkIcon key={history.links?.reddit} href={history.links?.reddit} linkType="reddit" /> : '',
+                    history.links?.article ? <LinkIcon key={history.links?.article} href={history.links?.article} linkType="article" /> : '',
+                    history.links?.wikipedia ? <LinkIcon key={history.links?.wikipedia} href={history.links?.wikipedia} linkType="wikipedia" /> : '',
+                ]}/>
+                <p><span className="text-heading">Date: </span><UnixTimeConverter timestamp={history.event_date_unix} /></p>
+                <p><span className="text-heading">Flight number: </span>{history.flight_number ? <a href={"/launches/"+history.flight_number}>{history.flight_number}</a> : '-'}</p>
+                <p><span className="text-heading">Details: </span>{history.details}</p>
+            </div>
         </div>
     );
 }
