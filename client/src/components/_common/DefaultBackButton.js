@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ButtonContainer = styled.div`
+const DefaultBackButtonContainer = styled.div`
     cursor: pointer;
     height: 45px;
     display: inline-block;
@@ -13,7 +13,7 @@ const ButtonContainer = styled.div`
     border: 0;
     font-size: 1em;
     transition: background-color 0.2s ease-in, color 0.2s ease-in;
-
+    
     &:hover {
         background-color: #88a8c5;
         color: #333;
@@ -25,12 +25,17 @@ const ButtonText = styled.p`
     line-height: 0.75;
 `;
 
+
 function DefaultButton(props) {
+    const goBack = () => {
+        window.history.back();
+    }
+
     return (
-        <a href={props.href}>
-            <ButtonContainer>
-                <ButtonText>{props.text}</ButtonText>
-            </ButtonContainer>
+        <a onClick={goBack}>
+            <DefaultBackButtonContainer>
+                <ButtonText>Go back</ButtonText>
+            </DefaultBackButtonContainer>
         </a>
     );
 }

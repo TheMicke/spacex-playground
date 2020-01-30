@@ -37,8 +37,8 @@ class NavSites extends Component {
                 {this.state.open && (
                     <div className="nav-dropdown">
                         <ul>
-                            <li><a href="/launch_pads">Launch pads</a></li>
-                            <li><a href="/landing_pads">Landing pads</a></li>
+                            <a href="/launch_pads"><li>Launch pads</li></a>
+                            <a href="/landing_pads"><li>Landing pads</li></a>
                         </ul>
                     </div>
                 )}

@@ -1,0 +1,22 @@
+.page-content-container {
+    padding: 0 10px;
+    margin: auto;
+    padding: 0 25px;
+    text-align: left;
+}
+
+.component-heading {
+    text-transform: uppercase;
+}
+
+@media screen and (min-width: 768px) {
+    .page-content-container {
+        padding: 0 50px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .page-content-container {
+        padding: 0 75px;
+    }
+}

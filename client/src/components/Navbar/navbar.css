@@ -3,6 +3,7 @@
     display: inline-block;
 }
 .nav-button {
+    cursor: pointer;
     height: 45px;
     display: inline-block;
     background-color: #005287;

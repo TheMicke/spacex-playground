@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import LoaderSpinner from '../_common/LoaderSpinner';
-
 import CoresListCard from './CoresListCard';
+import BackToTopButton from '../_common/BackToTopButton';
 
 function CoresList() {
     const [isLoading, setIsLoading] = useState(false);
@@ -18,7 +18,12 @@ function CoresList() {
         fetchData();
     }, []);
 
-    return <div>{isLoading ? <LoaderSpinner /> : cores.length > 0 && cores.map(core => <CoresListCard key={core.core_serial} data={core} />)}</div>;
+    return (
+        <div>
+            <BackToTopButton />
+            {isLoading ? <LoaderSpinner /> : cores.length > 0 && cores.map(core => <CoresListCard key={core.core_serial} data={core} />)}
+        </div>
+    );
 }
 
 export default CoresList;

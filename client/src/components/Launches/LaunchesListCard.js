@@ -17,6 +17,15 @@ const IconLaunchListCard = styled.img`
 `;
 
 function LaunchesListCard(props) {
+
+    let launchSuccessIcon = null
+    if (Math.floor(Date.now()/1000) > props.data.launch_date_unix) {
+        props.data.launch_success ? launchSuccessIcon = <IconLaunchListCard src={iconSuccess} /> : launchSuccessIcon = <IconLaunchListCard src={iconFail}/>
+    } else {
+        launchSuccessIcon = '-';
+    }
+    
+
     return (
         <a href={'/launches/' + props.data.flight_number} >
             <div className="list-card">
@@ -28,8 +37,7 @@ function LaunchesListCard(props) {
                 </p>
 
                 <p className="capsule-data">
-                    <span className="card-heading">Launch success: </span>
-                    {props.data.launch_success ? <IconLaunchListCard src={iconSuccess} /> : <IconLaunchListCard src={iconFail}/>}
+                    <span className="card-heading">Launch success: </span> {launchSuccessIcon}
                 </p>
             </div>
         </a>

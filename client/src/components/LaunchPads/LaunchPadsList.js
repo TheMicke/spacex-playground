@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import LoaderSpinner from '../_common/LoaderSpinner';
-
-
 import LaunchPadsListCard from './LaunchPadsListCard';
+import BackToTopButton from '../_common/BackToTopButton';
 
 function LaunchPadsList() {
     const [isLoading, setIsLoading] = useState(false);
@@ -21,6 +20,7 @@ function LaunchPadsList() {
 
     return (
         <div>
+            <BackToTopButton />
             {isLoading ? 
             <LoaderSpinner /> 
             : 

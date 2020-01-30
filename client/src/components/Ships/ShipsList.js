@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import LoaderSpinner from '../_common/LoaderSpinner';
 
 import ShipsListCard from './ShipsListCard';
+import BackToTopButton from '../_common/BackToTopButton';
 
 function ShipsList() {
     const [isLoading, setIsLoading] = useState(false);
@@ -18,7 +19,12 @@ function ShipsList() {
         fetchData();
     }, []);
 
-    return <div>{isLoading ? <LoaderSpinner /> : ships.length > 0 && ships.map(ship => <ShipsListCard key={ship.ship_id} data={ship} />)}</div>;
+    return (
+    <div>
+        <BackToTopButton />
+        {isLoading ? <LoaderSpinner /> : ships.length > 0 && ships.map(ship => <ShipsListCard key={ship.ship_id} data={ship} />)}
+    </div>
+    );
 }
 
 export default ShipsList;

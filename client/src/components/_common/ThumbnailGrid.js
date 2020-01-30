@@ -2,7 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ImageContainer = styled.div`
-    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 `;
 
 const Image = styled.img`

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../_css/details-view.css';
+import '../_css/component-general.css';
+import DefaultBackButton from '../_common/DefaultBackButton';
 import LoaderSpinner from '../_common/LoaderSpinner';
 import CapsuleDetailsContent from './CapsulesDetailsContent';
 

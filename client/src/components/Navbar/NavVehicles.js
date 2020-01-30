@@ -37,12 +37,12 @@ class NavVehicles extends Component {
                 {this.state.open && (
                     <div className="nav-dropdown">
                         <ul>
-                            <li><a href="/capsules">Capsules</a></li>
-                            <li><a href="/cores">Cores</a></li>
-                            <li><a href="/dragons">Dragons</a></li>
-                            <li><a href="/rockets">Rockets</a></li>
-                            <li><a href="/roadster">Roadster</a></li>
-                            <li><a href="/ships">Ships</a></li>
+                            <a href="/capsules"><li>Capsules</li></a>
+                            <a href="/cores"><li>Cores</li></a>
+                            <a href="/dragons"><li>Dragons</li></a>
+                            <a href="/rockets"><li>Rockets</li></a>
+                            <a href="/roadster"><li>Roadster</li></a>
+                            <a href="/ships"><li>Ships</li></a>
                         </ul>
                     </div>
                 )}
