@@ -11,7 +11,7 @@ function RocketDetails(props) {
         async function fetchData() {
             const rocketId = props.match.params.rocketId;
             setIsLoading(true);
-            await fetch(`/rockets/${rocketId}`)
+            await fetch(`/api/v3/rockets/${rocketId}`)
                 .then(res => res.json())
                 .then(data => setRocket(data));
             setIsLoading(false);

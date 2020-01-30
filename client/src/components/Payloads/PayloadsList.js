@@ -10,7 +10,7 @@ function PayloadsList() {
     useEffect(() => {
         async function fetchData() {
             setIsLoading(true)
-            await fetch('/payloads')
+            await fetch('/api/v3/payloads')
             .then(res => res.json())
             .then(data => setPayloads(data));
             setIsLoading(false);
@@ -23,7 +23,7 @@ function PayloadsList() {
             {isLoading ? 
             <LoaderSpinner /> 
             : 
-            payloads.length>0 && payloads.map(payload => <PayloadsListCard key={payload.id} data={payload} />)
+            payloads.length>0 && payloads.map(payload => <PayloadsListCard key={Math.random()} data={payload} />)
             }
         </div>
     );

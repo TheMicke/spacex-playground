@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import LaunchesListCard from './LaunchesListCard';
 import LoaderSpinner from '../_common/LoaderSpinner';
 import DefaultButton from '../_common/DefaultButton';
+import BackToTopButton from '../_common/BackToTopButton';
 
 
 const TopRow = styled.div`
@@ -20,7 +21,7 @@ function LaunchesList() {
     useEffect(() => {
         async function fetchData() {
             setIsLoading(true)
-            await fetch('/launches')
+            await fetch('/api/v3/launches')
             .then(res => res.json())
             .then(data => setLaunches(data));
             setIsLoading(false);
@@ -31,9 +32,10 @@ function LaunchesList() {
     return (
         <div>
             <TopRow>
-                <DefaultButton href='/launches/upcoming' text='Upcoming launch' />
                 <DefaultButton href='/launches/latest' text='Latest launch' />
+                <DefaultButton href='/launches/next' text='Next launch' />
             </TopRow>
+            <BackToTopButton />
             {isLoading ? 
             <LoaderSpinner /> 
             : 

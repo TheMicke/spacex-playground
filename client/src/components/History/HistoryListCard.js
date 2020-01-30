@@ -1,16 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import '../_css/list-view.css';
 
 import UnixTimeConverter from '../_common/UnixTimeConverter';
-
-const CardHeader = styled.h3`
-    font-weight: 700;
-`;
-
-const CardDataHeading = styled.span`
-    font-weight: 700;
-`;
 
 function DragonsListCard(props) {
     return (

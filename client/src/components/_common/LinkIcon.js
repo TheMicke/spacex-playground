@@ -54,7 +54,7 @@ const getIcon = type => {
 
 function LinkIcon(props) {
     return (
-        <a href={props.href} target="_blank" rel="noopener noreferrer">
+        <a href={props.href} title={props.hoverText} target="_blank" rel="noopener noreferrer">
             <LinkImage src={getIcon(props.linkType)} />
         </a>
     );

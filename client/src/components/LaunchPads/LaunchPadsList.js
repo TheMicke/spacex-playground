@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import LoaderSpinner from '../_common/LoaderSpinner';
-
-
 import LaunchPadsListCard from './LaunchPadsListCard';
+import BackToTopButton from '../_common/BackToTopButton';
 
 function LaunchPadsList() {
     const [isLoading, setIsLoading] = useState(false);
@@ -11,7 +10,7 @@ function LaunchPadsList() {
     useEffect(() => {
         async function fetchData() {
             setIsLoading(true)
-            await fetch('/launch_pads')
+            await fetch('/api/v3/launch_pads')
             .then(res => res.json())
             .then(data => setLaunchPads(data));
             setIsLoading(false);
@@ -21,6 +20,7 @@ function LaunchPadsList() {
 
     return (
         <div>
+            <BackToTopButton />
             {isLoading ? 
             <LoaderSpinner /> 
             : 

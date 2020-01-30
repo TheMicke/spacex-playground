@@ -10,7 +10,7 @@ function DragonsList() {
     useEffect(() => {
         async function fetchData() {
             setIsLoading(true)
-            await fetch('/dragons')
+            await fetch('/api/v3/dragons')
             .then(res => res.json())
             .then(data => setDragons(data));
             setIsLoading(false);

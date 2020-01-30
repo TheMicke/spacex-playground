@@ -1,0 +1,26 @@
+.data-block {
+    margin: 0px auto 50px auto;
+    text-align: left;
+    font-style: oblique;
+}
+
+.data-inner-block {
+    margin-bottom: 25px;
+}
+
+.details-text-heading {
+    font-weight: 700;
+    font-style: normal;
+}
+
+@media screen and (min-width: 768px) {
+    .content-container {
+        padding: 0 15px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .content-container {
+        padding: 0 50px;
+    }
+}

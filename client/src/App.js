@@ -1,12 +1,11 @@
 import React from 'react';
-import logo from './images/spacex-playground.png';
 import { Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
-
+import Header from './components/Header';
+import Footer from './components/Footer';
 import Home from './components/Home';
-import Navbar from './components/Navbar';
-
 import CapsulesList from './components/Capsules/CapsulesList';
+import CapsuleDetails from './components/Capsules/CapsuleDetails';
 import CoresList from './components/Cores/CoresList';
 import CoreDetails from './components/Cores/CoreDetails';
 import DragonsList from './components/Dragons/DragonsList';
@@ -30,9 +29,9 @@ import Roadster from './components/Roadster/Roadster';
 import ShipsList from './components/Ships/ShipsList';
 import ShipDetails from './components/Ships/ShipDetails';
 
-
 const AppContainer = styled.div`
     text-align: center;
+    background-color: #fff;
 `;
 
 const PageContainer = styled.div`
@@ -40,35 +39,16 @@ const PageContainer = styled.div`
     max-width: 1280px;
 `;
 
-const AppHeader = styled.header`
-    background-color: #37393a;
-    padding-top: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-`;
-
-const AppLogo = styled.img`
-    width: 70%;
-    pointer-events: none;
-`;
-
 function App() {
     return (
         <main>
             <AppContainer>
-                <AppHeader>
-                    <AppLogo src={logo} alt="Spacex logo" />
-                </AppHeader>
-                <Navbar />
-
+                <Header />
                 <PageContainer>
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route exact path="/capsules" component={CapsulesList} />
+                        <Route exact path="/capsules/:capsuleSerial" component={CapsuleDetails} />
                         <Route exact path="/cores" component={CoresList} />
                         <Route exact path="/cores/:coreSerial" component={CoreDetails} />
                         <Route exact path="/dragons" component={DragonsList} />
@@ -93,6 +73,7 @@ function App() {
                         <Route exact path="/ships/:shipId" component={ShipDetails} />
                     </Switch>
                 </PageContainer>
+                <Footer />
             </AppContainer>
         </main>
     );

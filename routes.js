@@ -13,7 +13,7 @@ const { getAllRockets, getRocket } = require('./dataFetchers/rockets');
 const { getAllShips, getShip } = require('./dataFetchers/ships');
 
 module.exports = function(app) {
-    app.get('/', (req, res) => {
+    app.get('/api/v3/', (req, res) => {
         res.send('Hello World!');
     });
 
@@ -21,43 +21,39 @@ module.exports = function(app) {
     //************//
     //  Capsules  //
     //************//
-    app.get('/goodbye', (req, res) => {
-        res.send('Goodbye World!');
-    });
-
-    app.get('/capsules', (req, res) => {
+    app.get('/api/v3/capsules', (req, res) => {
         getAllCapsules().then(data => res.send(data));
     });
 
-    app.get('/capsules/upcoming', (req, res) => {
+    app.get('/api/v3/capsules/upcoming', (req, res) => {
         getUpcomingCapsules().then(data => res.send(data));
     });
 
-    app.get('/capsules/past', (req, res) => {
+    app.get('/api/v3/capsules/past', (req, res) => {
         getPastCapsules().then(data => res.send(data));
     });
 
-    app.get('/capsule/:serial', (req, res) => {
-        getCapsule(req.params.serial).then(data => res.send(data));
+    app.get('/api/v3/capsules/:capsuleSerial', (req, res) => {
+        getCapsule(req.params.capsuleSerial).then(data => res.send(data));
     });
     
 
     //*********//
     //  Cores  //
     //*********//
-    app.get('/cores', (req, res) => {
+    app.get('/api/v3/cores', (req, res) => {
         getAllCores().then(data => res.send(data));
     });
 
-    app.get('/cores/upcoming', (req, res) => {
+    app.get('/api/v3/cores/upcoming', (req, res) => {
         getUpcomingCores().then(data => res.send(data));
     });
 
-    app.get('/cores/past', (req, res) => {
+    app.get('/api/v3/cores/past', (req, res) => {
         getPastCores().then(data => res.send(data));
     });
 
-    app.get('/cores/:serial', (req, res) => {
+    app.get('/api/v3/cores/:serial', (req, res) => {
         getCore(req.params.serial).then(data => res.send(data));
     });
 
@@ -65,28 +61,28 @@ module.exports = function(app) {
     //***********//
     //  Dragons  //
     //***********//
-    app.get('/dragons', (req, res) => {
+    app.get('/api/v3/dragons', (req, res) => {
         getAllDragons().then(data => res.send(data));
     });
 
-    app.get('/dragons/:id', (req, res) => {
+    app.get('/api/v3/dragons/:id', (req, res) => {
         getDragon(req.params.id).then(data => res.send(data));
     });
 
     
     // History
-    app.get('/history', (req, res) => {
+    app.get('/api/v3/history', (req, res) => {
         getAllHistoricalEvents().then(data => res.send(data));
     });
 
-    app.get('/history/:id', (req, res) => {
+    app.get('/api/v3/history/:id', (req, res) => {
         getHistory(req.params.id).then(data => res.send(data));
     });
     
     //*********/
     //  Info  //
     //*********/
-    app.get('/info', (req, res) => {
+    app.get('/api/v3/info', (req, res) => {
         getInfo().then(data => res.send(data));
     });
 
@@ -94,11 +90,11 @@ module.exports = function(app) {
     //****************//
     //  Landing pads  //
     //****************//
-    app.get('/landing_pads', (req, res) => {
+    app.get('/api/v3/landing_pads', (req, res) => {
         getAllLandingPads().then(data => res.send(data));
     });
 
-    app.get('/landing_pads/:id', (req, res) => {
+    app.get('/api/v3/landing_pads/:id', (req, res) => {
         getLandingPad(req.params.id).then(data => res.send(data));
     });
 
@@ -106,27 +102,27 @@ module.exports = function(app) {
     //************//
     //  Launches  //
     //************//
-    app.get('/launches', (req, res) => {
+    app.get('/api/v3/launches', (req, res) => {
         getAllLaunches().then(data => res.send(data));
     });
 
-    app.get('/launches/past', (req, res) => {
+    app.get('/api/v3/launches/past', (req, res) => {
         getPastLaunches().then(data => res.send(data));
     });
 
-    app.get('/launches/upcoming', (req, res) => {
+    app.get('/api/v3/launches/upcoming', (req, res) => {
         getUpcomingLaunches().then(data => res.send(data));
     });
 
-    app.get('/launches/latest', (req, res) => {
+    app.get('/api/v3/launches/latest', (req, res) => {
         getLatestLaunch().then(data => res.send(data));
     });
 
-    app.get('/launches/next', (req, res) => {
+    app.get('/api/v3/launches/next', (req, res) => {
         getNextLaunch().then(data => res.send(data));
     });
 
-    app.get('/launches/:flight_number', (req, res) => {
+    app.get('/api/v3/launches/:flight_number', (req, res) => {
         getLaunch(req.params.flight_number).then(data => res.send(data));
     });
 
@@ -134,11 +130,11 @@ module.exports = function(app) {
     //****************/    
     //  Launch pads  //
     //****************/
-    app.get('/launch_pads', (req, res) => {
+    app.get('/api/v3/launch_pads', (req, res) => {
         getAllLaunchPads().then(data => res.send(data));
     });
 
-    app.get('/launch_pads/:site_id', (req, res) => {
+    app.get('/api/v3/launch_pads/:site_id', (req, res) => {
         getLaunchPad(req.params.site_id).then(data => res.send(data));
     });
 
@@ -146,11 +142,11 @@ module.exports = function(app) {
     //************//
     //  Missions  //
     //************//
-    app.get('/missions', (req, res) => {
+    app.get('/api/v3/missions', (req, res) => {
         getAllMissions().then(data => res.send(data));
     });
 
-    app.get('/missions/:id', (req, res) => {
+    app.get('/api/v3/missions/:id', (req, res) => {
         getMission(req.params.id).then(data => res.send(data));
     });
 
@@ -158,11 +154,11 @@ module.exports = function(app) {
     //************//
     //  Payloads  //
     //************//
-    app.get('/payloads', (req, res) => {
+    app.get('/api/v3/payloads', (req, res) => {
         getAllPayloads().then(data => res.send(data));
     });
     
-    app.get('/payloads/:id', (req, res) => {
+    app.get('/api/v3/payloads/:id', (req, res) => {
         getPayload(req.params.id).then(data => res.send(data));
     });
 
@@ -170,7 +166,7 @@ module.exports = function(app) {
     //************//
     //  Roadster  //
     //************//
-    app.get('/roadster', (req, res) => {
+    app.get('/api/v3/roadster', (req, res) => {
         getRoadster().then(data => res.send(data));
     });
     
@@ -178,11 +174,11 @@ module.exports = function(app) {
     //***********//
     //  Rockets  //
     //***********//
-    app.get('/rockets', (req, res) => {
+    app.get('/api/v3/rockets', (req, res) => {
         getAllRockets().then(data => res.send(data));
     });
 
-    app.get('/rockets/:rocket_id', (req, res) => {
+    app.get('/api/v3/rockets/:rocket_id', (req, res) => {
         getRocket(req.params.rocket_id).then(data => res.send(data));
     });
 
@@ -190,11 +186,11 @@ module.exports = function(app) {
     //*********//
     //  Ships  //
     //*********//
-    app.get('/ships', (req, res) => {
+    app.get('/api/v3/ships', (req, res) => {
         getAllShips().then(data => res.send(data));
     });
 
-    app.get('/ships/:id', (req, res) => {
+    app.get('/api/v3/ships/:id', (req, res) => {
         getShip(req.params.id).then(data => res.send(data));
     });
 };

@@ -12,7 +12,7 @@ function LaunchDetails(props) {
         async function fetchData() {
             setIsLoading(true);
             const flightNumber = props.match.params.flightNumber;
-            await fetch(`/launches/${flightNumber}`)
+            await fetch(`/api/v3/launches/${flightNumber}`)
                 .then(res => res.json())
                 .then(data => setLaunch(data))
                 .catch(err => console.log(err));

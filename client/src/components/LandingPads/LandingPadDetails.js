@@ -11,7 +11,7 @@ function LandingPadDetails(props) {
         async function fetchData() {
             const landingPadId = props.match.params.landingPadId;
             setIsLoading(true);
-            await fetch(`/landing_pads/${landingPadId}`)
+            await fetch(`/api/v3/landing_pads/${landingPadId}`)
                 .then(res => res.json())
                 .then(data => setLandingPad(data));
             setIsLoading(false);
