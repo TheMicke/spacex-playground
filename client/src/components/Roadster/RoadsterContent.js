@@ -4,7 +4,6 @@ import ThumbnailGrid from '../_common/ThumbnailGrid';
 import LinkIcon from '../_common/LinkIcon';
 import '../_css/details-view.css';
 import '../_css/component-general.css';
-import DefaultBackButton from '../_common/DefaultBackButton';
 
 function RoadsterContent(props) {
     console.log('RoadsterContent', props);

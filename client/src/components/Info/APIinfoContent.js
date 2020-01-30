@@ -1,7 +1,6 @@
 import React from 'react';
 import '../_css/details-view.css';
 import '../_css/component-general.css';
-import DefaultBackButton from '../_common/DefaultBackButton';
 
 function APIinfoContent(props) {
     console.log('APIinfoContent', props);

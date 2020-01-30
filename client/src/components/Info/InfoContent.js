@@ -2,7 +2,6 @@ import React from 'react';
 import LinkIcon from '../_common/LinkIcon';
 import '../_css/details-view.css';
 import '../_css/component-general.css';
-import DefaultBackButton from '../_common/DefaultBackButton';
 
 function InfoContent(props) {
     const info = props.info;

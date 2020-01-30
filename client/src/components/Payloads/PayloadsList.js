@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import LoaderSpinner from '../_common/LoaderSpinner';
-
 import PayloadsListCard from './PayloadsListCard';
+import BackToTopButton from '../_common/BackToTopButton';
 
 function PayloadsList() {
     const [isLoading, setIsLoading] = useState(false);
@@ -20,6 +20,7 @@ function PayloadsList() {
 
     return (
         <div>
+            <BackToTopButton />
             {isLoading ? 
             <LoaderSpinner /> 
             : 

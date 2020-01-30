@@ -12,12 +12,14 @@ import YoutubeVideo from '../_common/YoutubeVideo';
 
 import defaultMissionPatch from '../../images/spacex-x.png';
 import UnixTimeConverter from '../_common/UnixTimeConverter';
+import BackToTopButton from '../_common/BackToTopButton';
 
 const MissionPatch = styled.img`
+    display: block;
     width: 90%;
     max-width: 350px;
     margin: 25px auto;
-    margin-right: ${props => (props.placeholderPatch ? '-175px' : '0')};
+    ${props => (props.placeholderPatch ? 'margin-right: -175px' : '')};
 `;
 
 function LaunchDetailsContent(props) {
@@ -27,6 +29,7 @@ function LaunchDetailsContent(props) {
     return (
         <div className="page-content-container">
             <DefaultBackButton />
+            <BackToTopButton />
             <div className="data-block">
             {launch.links?.mission_patch ? <MissionPatch src={launch.links?.mission_patch} /> : <MissionPatch src={defaultMissionPatch} placeholderPatch />}
                 <h2>{launch.mission_name}</h2>
@@ -51,6 +54,9 @@ function LaunchDetailsContent(props) {
                 <p><span className="details-text-heading">Launch site: </span> <a href={"/launch_pads/" + launch.launch_site?.site_id }>{launch.launch_site?.site_name_long + ' (' + launch.launch_site?.site_name + ')'}</a></p>
                 <p><span className="details-text-heading">Flight number: </span>{launch.flight_number}</p>
                 <p><span className="details-text-heading">Details: </span>{launch.details}</p>
+                <p><span className="details-text-heading">Ships used: </span>{launch.ships?.map(ship => <a href={'/ships/'+ship} key={ship}>{ship + ', '}</a> )}</p>
+                
+
             </div>
 
             {launch.links?.youtube_id || launch.links?.flickr_images[0] ? <h2>Media:</h2> : ''}

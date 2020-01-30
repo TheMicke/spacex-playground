@@ -32,7 +32,7 @@ function DefaultButton(props) {
     }
 
     return (
-        <a onClick={goBack}>
+        <a href="#goBack" onClick={goBack}>
             <DefaultBackButtonContainer>
                 <ButtonText>Go back</ButtonText>
             </DefaultBackButtonContainer>
