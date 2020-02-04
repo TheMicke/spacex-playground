@@ -15,18 +15,14 @@ const NavbarContainer = styled.div`
 `;
 
 
-
-
 function Navbar() {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     
     window.onresize = () => {
         setWindowWidth(window.innerWidth);
-        console.log(windowWidth);
     }
     
     return (
-        <>
         <NavbarContainer>
             <DefaultButton href="/" text="Home" />
             <NavVehicles />
@@ -40,9 +36,6 @@ function Navbar() {
             <DefaultButton href="/payloads" text="Payloads" />
             </> }
         </NavbarContainer>
-
-        
-        </>
     );
 }
 

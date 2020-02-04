@@ -4,7 +4,6 @@ import '../_css/component-general.css';
 import DefaultBackButton from '../_common/DefaultBackButton';
 
 function PayloadDetailsContent(props) {
-    console.log('PayloadDetailsContent', props);
     const payload = props.payload;
     return (
         <div className="page-content-container">

@@ -20,7 +20,6 @@ function CapsulesList() {
 
     return (
         <div>
-        {console.log(capsules)}
             <BackToTopButton />
             {isLoading ? <LoaderSpinner /> : capsules.length > 0 && capsules.map(capsule => <CapsulesListCard key={capsule.capsule_serial} data={capsule} />)}
         </div>
