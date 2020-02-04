@@ -16,7 +16,7 @@ function DragonDetailsContent(props) {
         <div className="page-content-container">
             <DefaultBackButton />
             <div>
-                <h2>{dragon.name}</h2>
+                <h2 className="details-heading">{dragon.name}</h2>
                 <LinkIcon href={dragon.wikipedia} linkType="wikipedia" />
                 <div className="data-block-container">
                     <div className="data-block">
@@ -56,6 +56,7 @@ function DragonDetailsContent(props) {
                         <p><span className="details-text-heading">Total return payload mass:</span> {dragon.return_payload_mass?.kg} kg | {dragon.return_payload_mass?.lb} lb</p>
                         <p><span className="details-text-heading">Total launch payload volume:</span> {dragon.launch_payload_vol?.cubic_meters} m<sup>2</sup> | {dragon.launch_payload_vol?.cubic_feet} ft<sup>3</sup></p>
                         <p><span className="details-text-heading">Total return payload volume:</span> {dragon.return_payload_vol?.cubic_meters} m<sup>2</sup> | {dragon.return_payload_vol?.cubic_feet} ft<sup>3</sup></p>
+                        <br />
                         <p className="details-text-heading">Trunk</p>
                         <p><span className="details-text-heading">Trunk volume:</span> {dragon.trunk?.trunk_volume.cubic_meters} m<sup>2</sup> | {dragon.trunk?.trunk_volume.cubic_feet} ft<sup>3</sup></p>
                         <p><span className="details-text-heading">Trunk cargo solar array(s):</span> {dragon.trunk?.cargo.solar_array}</p>

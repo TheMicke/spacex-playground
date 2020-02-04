@@ -8,7 +8,7 @@ function APIinfoContent(props) {
     return (
         <div className="page-content-container">
             <div className="data-block">
-                <h2>API Info</h2>
+                <h2 className="details-heading">API Info</h2>
                 <p><span className="details-text-heading">Project name: </span>{api.project_name}</p>
                 <p><span className="details-text-heading">Version: </span>{api.version}</p>
                 <p><span className="details-text-heading">Organization: </span><a href={api.organization_link}>{api.organization}</a></p>

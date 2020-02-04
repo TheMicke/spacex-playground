@@ -11,7 +11,7 @@ function LandingPadDetailsContent(props) {
         <div className="page-content-container">
             <DefaultBackButton />
             <div className="data-block">
-                <h3>{landingPad.full_name}</h3>
+                <h2 className="details-heading">{landingPad.full_name}</h2>
                 <p><span className="details-text-heading">Landing Pad id: </span>{landingPad.id}</p>
                 <p><span className="details-text-heading">Status: </span>{landingPad.status}</p>
                 <p><span className="details-text-heading">Location: </span>{landingPad.location?.name}, {landingPad.location?.region}</p>

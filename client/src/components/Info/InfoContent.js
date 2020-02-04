@@ -9,7 +9,7 @@ function InfoContent(props) {
     return (
         <div className="page-content-container">
             <div className="data-block">
-                <h2>{info.name} company info</h2>
+                <h2 className="details-heading">{info.name} company info</h2>
                 <p>{info.summary}</p>
                 <p><span className="details-text-heading">Founder: </span>{info.founder}</p>
                 <p><span className="details-text-heading">Founded: </span>{info.founded}</p>

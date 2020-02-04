@@ -39,7 +39,7 @@ console.log();
             <div className="data-block-container">
                 {launch.links?.mission_patch ? <MissionPatch src={launch.links?.mission_patch} /> : <MissionPatch src={defaultMissionPatch} placeholderPatch />}
                 <LaunchDataBlock>
-                    <h2>{launch.mission_name}</h2>
+                    <h2 className="details-heading">{launch.mission_name}</h2>
                     <LinkRow
                         links={[
                             launch.links?.article_link ? <LinkIcon key={launch.links?.article_link} href={launch.links?.article_link} linkType="article" hoverText="Article" /> : '',

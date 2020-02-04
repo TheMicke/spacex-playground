@@ -10,7 +10,7 @@ function MissionDetailsContent(props) {
         <div className="page-content-container">
             <DefaultBackButton />
             <div className="data-block">
-                <h3><span className="details-text-heading">{mission.mission_name}</span></h3>
+                <h2 className="details-heading">{mission.mission_name}</h2>
                 <p><span className="details-text-heading">Mission id: <br /></span>{mission.mission_id}</p>
                 <p><span className="details-text-heading">Manufacturers: <br /></span>{mission.manufacturers}</p>
                 <p><span className="details-text-heading">Payloads: <br /></span>{mission.payload_ids?.map(payloadId => <a href={'/payloads/'+payloadId} key={payloadId}>{payloadId + ', '}</a> )}</p>

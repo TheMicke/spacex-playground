@@ -11,7 +11,7 @@ function CoreDetailsContent(props) {
         <div className="page-content-container">
             <DefaultBackButton />
             <div className="data-block">
-                <h3><span className="details-text-heading">{core.core_serial}</span></h3>
+                <h2 className="details-heading">{core.core_serial}</h2>
                 <p><span className="details-text-heading">Status: </span>{core.status}</p>
                 <p><span className="details-text-heading">Block: </span>{core.block}</p>
                 <p><span className="details-text-heading">First launch: </span><UnixTimeConverter timestamp={core.original_launch_unix} /></p>
