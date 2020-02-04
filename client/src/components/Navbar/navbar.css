@@ -27,7 +27,8 @@
     text-align: left;
     top: 100%;
     left: 0;
-    width: 150px;
+    min-width: 100px;
+    max-width: 150px;
     z-index: 2;
     background-color: #a7a9ac;
     border-radius: 10px;
@@ -50,4 +51,11 @@ li:hover {
 
 button:focus {
     outline:0;
+}
+
+
+@media screen and (min-width: 450px){
+    .nav-dropdown {
+        width: 150px;
+    }
 }

@@ -22,8 +22,8 @@ function BackToTopButton() {
     let toTopButton = document.getElementById('backToTopBtn');
 
     useEffect(() => {
-        toTopButton = document.getElementById('backToTopBtn');
     }, []);
+    toTopButton = document.getElementById('backToTopBtn');
 
     const scrollFunction = () => {
         document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ? (toTopButton.style.bottom = '30px') : (toTopButton.style.bottom = '-50px');
@@ -38,7 +38,7 @@ function BackToTopButton() {
 
     return (
         <button onClick={backToTop} id="backToTopBtn" title="Back to top" style={toTopButtonStyle}>
-            <img src={backToTopImg} />
+            <img src={backToTopImg} alt="menu"/>
         </button>
 
     );
