@@ -5,7 +5,6 @@ import '../_css/component-general.css';
 import DefaultBackButton from '../_common/DefaultBackButton';
 
 function LaunchPadDetailsContent(props) {
-    console.log('LaunchPadDetailsContent', props);
     let launchPad = props.data;
     
     return (

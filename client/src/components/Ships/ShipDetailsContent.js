@@ -6,7 +6,6 @@ import '../_css/component-general.css';
 import DefaultBackButton from '../_common/DefaultBackButton';
 
 function ShipDetailsContent(props) {
-    console.log('ShipDetailsContent', props);
     const ship = props.ship;
     const shipImage = [ship.image];
 

@@ -15,7 +15,8 @@ import twitterIcon from '../../images/twitter_icon.svg';
 const LinkImage = styled.img`
     width: 25px;
     height: 25px;
-    margin: 5px;
+    margin-left: 5px;
+    margin-bottom: -5px;
 `;
 
 const getIcon = type => {

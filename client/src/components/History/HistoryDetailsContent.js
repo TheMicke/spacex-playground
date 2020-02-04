@@ -8,7 +8,6 @@ import '../_css/component-general.css';
 import DefaultBackButton from '../_common/DefaultBackButton';
 
 function HistoryDetailsContent(props) {
-    console.log('HistoryDetailsContent', props);
     let history = props.history;
 
     return (

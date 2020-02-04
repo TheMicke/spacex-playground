@@ -6,7 +6,6 @@ import DefaultBackButton from '../_common/DefaultBackButton';
 
 function LandingPadDetailsContent(props) {
     let landingPad = props.data;
-    console.log('LandingPadDetailsContent', props);
 
     return (
         <div className="page-content-container">

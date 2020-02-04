@@ -2,9 +2,6 @@ import React from 'react';
 import '../_css/list-view.css';
 
 function MissionsListCard(props) {
-
-    console.log(props);
-
     return (
         <a href={'/missions/' + props.data.mission_id}>
             <div className="list-card">

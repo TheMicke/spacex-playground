@@ -6,7 +6,6 @@ import '../_css/details-view.css';
 import '../_css/component-general.css';
 
 function RoadsterContent(props) {
-    console.log('RoadsterContent', props);
     const roadster = props.data;
     return (
         <div className="page-content-container">

@@ -5,7 +5,6 @@ import DefaultBackButton from '../_common/DefaultBackButton';
 import UnixTimeConverter from '../_common/UnixTimeConverter';
 
 function CoreDetailsContent(props) {
-    console.log('CoreDetailsContent', props);    
     const core = props.core;
 
     return (

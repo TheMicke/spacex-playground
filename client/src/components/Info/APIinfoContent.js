@@ -3,7 +3,6 @@ import '../_css/details-view.css';
 import '../_css/component-general.css';
 
 function APIinfoContent(props) {
-    console.log('APIinfoContent', props);
     const api = props.data;
 
     return (

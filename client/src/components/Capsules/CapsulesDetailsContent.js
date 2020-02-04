@@ -6,7 +6,6 @@ import UnixTimeConverter from '../_common/UnixTimeConverter';
 
 
 function CapsuleDetailsContent(props) {
-    console.log('CapsuleDetailsContent', props);
     let capsule = props.data;
     
     return (

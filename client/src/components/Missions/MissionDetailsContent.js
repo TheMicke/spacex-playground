@@ -5,7 +5,6 @@ import '../_css/component-general.css';
 import DefaultBackButton from '../_common/DefaultBackButton';
 
 function MissionDetailsContent(props) {
-    console.log('MissionDetailsContent', props);
     const mission = props.mission;
     return (
         <div className="page-content-container">
