@@ -1,5 +1,5 @@
 .data-block {
-    margin: 0px auto 50px auto;
+    margin-bottom: 50px;
     text-align: left;
     font-style: oblique;
 }
@@ -22,5 +22,9 @@
 @media screen and (min-width: 1024px) {
     .content-container {
         padding: 0 50px;
+    }
+
+    .data-block {
+        margin: 0px auto 50px auto;
     }
 }
