@@ -13,7 +13,7 @@ function ShipDetailsContent(props) {
         <div className="page-content-container">
             <DefaultBackButton />
             <div className="data-block">
-                <h3>{ship.ship_name}</h3>
+                <h2 className="details-heading">{ship.ship_name}</h2>
                 {ship.ship_id ? <p><span className="details-text-heading">Ship id: </span>{ship.ship_id} </p> : ''}
                 {ship.active ? <p><span className="details-text-heading">Active: </span>{ship.active ? 'Yes' : 'No'}</p> : ''}
                 {ship.type !== '' ? <p><span className="details-text-heading">Type: </span>{ship.ship_type}</p> : ''}

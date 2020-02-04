@@ -11,7 +11,7 @@ function LaunchPadDetailsContent(props) {
         <div className="page-content-container">
             <DefaultBackButton />
             <div className="data-block">
-                <h3>{launchPad.name}</h3>
+                <h2 className="details-heading">{launchPad.name}</h2>
                 <p><span className="details-text-heading">Full name: </span>{launchPad.site_name_long}</p>
                 <p><span className="details-text-heading">Launch Pad id: </span>{launchPad.site_id}</p>
                 <p><span className="details-text-heading">Status: </span>{launchPad.status}</p>

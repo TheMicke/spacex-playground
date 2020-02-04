@@ -14,7 +14,7 @@ function HistoryDetailsContent(props) {
         <div className="page-content-container">
             <DefaultBackButton />
             <div className="data-block">
-                <h3><span className="details-text-heading">{history.title}</span></h3>
+                <h2 className="details-heading">{history.title}</h2>
                 <LinkRow links={[
                     history.links?.reddit ? <LinkIcon key={history.links?.reddit} href={history.links?.reddit} linkType="reddit" /> : '',
                     history.links?.article ? <LinkIcon key={history.links?.article} href={history.links?.article} linkType="article" /> : '',

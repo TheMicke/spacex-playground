@@ -10,7 +10,7 @@ function RoadsterContent(props) {
     return (
         <div className="page-content-container">
             <div className="data-block">
-                <h3>{roadster.name}</h3>
+                <h2 className="details-heading">{roadster.name}</h2>
                 <p><span className="details-text-heading">Launch date: </span><UnixTimeConverter timestamp={roadster.launch_date_unix} />
                 </p>
 

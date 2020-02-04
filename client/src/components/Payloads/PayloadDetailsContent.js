@@ -9,7 +9,7 @@ function PayloadDetailsContent(props) {
         <div className="page-content-container">
             <DefaultBackButton />
             <div className="data-block">
-                <h3><span className="details-text-heading">{payload.payload_id}</span></h3>
+                <h2 className="details-heading">{payload.payload_id}</h2>
                 <p><span className="details-text-heading">Customer: </span>{payload.customers}</p>
                 <p><span className="details-text-heading">Nationality: </span>{payload.nationality}</p>
                 <p><span className="details-text-heading">Manufacturer: </span>{payload.manufacturer}</p>
