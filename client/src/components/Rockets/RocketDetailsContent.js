@@ -6,7 +6,7 @@ import DefaultBackButton from '../_common/DefaultBackButton';
 
 function RocketDetailsContent(props) {
     const rocket = props.rocket;
-    console.log(rocket);
+
     return (
         <div className="page-content-container">
             <DefaultBackButton />
@@ -41,9 +41,9 @@ function RocketDetailsContent(props) {
                     <p><span className="details-text-heading">Burn time: </span>{rocket.first_stage?.burn_time_sec} seconds</p>
                     <p><span className="details-text-heading">Thrust (sea level): </span>{rocket.first_stage?.thrust_sea_level?.kN} kN | {rocket.first_stage?.thrust_sea_level?.lbf} lbf</p>
                     <p><span className="details-text-heading">Thrust (vacuum): </span>{rocket.first_stage?.thrust_vacuum.kN} kN | {rocket.first_stage?.thrust_vacuum.lbf} lbf</p> 
-                </div>
 
-                <div className="data-block data-block-thirds">
+                    <br />
+
                     <h4 className="details-text-heading">Second stage</h4>
                     <p><span className="details-text-heading">Reusable: </span>{rocket.second_stage?.reusable ? 'Yes' : 'No'}</p>
                     <p><span className="details-text-heading">Engines: </span>{rocket.second_stage?.engines}</p>
@@ -52,7 +52,6 @@ function RocketDetailsContent(props) {
                     <p><span className="details-text-heading">Thrust (sea level): </span>{rocket.second_stage?.thrust.kN} kN | {rocket.second_stage?.thrust?.lbf} lbf</p>
                 </div>
             
-
             </div>
             {props.waitingForImages ? '' : <ThumbnailGrid images={rocket.flickr_images} />}
         </div>

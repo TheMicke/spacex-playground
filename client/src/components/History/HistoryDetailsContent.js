@@ -13,12 +13,12 @@ function HistoryDetailsContent(props) {
     return (
         <div className="page-content-container">
             <DefaultBackButton />
-            <div className="data-block data-block-thirds">
+            <div className="data-block data-block-full">
                 <h2 className="details-heading">{history.title}</h2>
                 <LinkRow links={[
-                    history.links?.reddit ? <LinkIcon key={history.links?.reddit} href={history.links?.reddit} linkType="reddit" /> : '',
-                    history.links?.article ? <LinkIcon key={history.links?.article} href={history.links?.article} linkType="article" /> : '',
-                    history.links?.wikipedia ? <LinkIcon key={history.links?.wikipedia} href={history.links?.wikipedia} linkType="wikipedia" /> : '',
+                    history.links?.reddit ? <LinkIcon key={history.links?.reddit} href={history.links?.reddit} linkType="reddit" hoverText="Reddit" /> : '',
+                    history.links?.article ? <LinkIcon key={history.links?.article} href={history.links?.article} linkType="article" hoverText="Article" /> : '',
+                    history.links?.wikipedia ? <LinkIcon key={history.links?.wikipedia} href={history.links?.wikipedia} linkType="wikipedia" hoverText="Wikipedia" /> : '',
                 ]}/>
                 <p><span className="details-text-heading">Date: </span><UnixTimeConverter timestamp={history.event_date_unix} /></p>
                 <p><span className="details-text-heading">Flight number: </span>{history.flight_number ? <a href={"/launches/"+history.flight_number}>{history.flight_number}</a> : '-'}</p>

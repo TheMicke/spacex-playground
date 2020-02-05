@@ -21,16 +21,9 @@ const MissionPatch = styled.img`
     margin: 25px auto;
 `;
 
-const LaunchDataBlock = styled.div`
-    width: 100%;
-    margin-bottom: 50px;
-    text-align: left;
-    font-style: oblique;
-`;
-
 function LaunchDetailsContent(props) {
     const launch = props.launch;
-console.log();
+
     return (
         <div className="page-content-container">
             <DefaultBackButton />
@@ -38,14 +31,14 @@ console.log();
 
             <div className="data-block-container">
                 {launch.links?.mission_patch ? <MissionPatch src={launch.links?.mission_patch} /> : <MissionPatch src={defaultMissionPatch} placeholderPatch />}
-                <LaunchDataBlock>
+                <div className="data-block data-block-full">
                     <h2 className="details-heading">{launch.mission_name}</h2>
                     <LinkRow
                         links={[
-                            launch.links?.article_link ? <LinkIcon key={launch.links?.article_link} href={launch.links?.article_link} linkType="article" hoverText="Article" /> : '',
-                            launch.links?.wikipedia ? <LinkIcon key={launch.links?.wikipedia} href={launch.links?.wikipedia} linkType="wikipedia" hoverText="Wikipedia" /> : '',
-                            launch.links?.video_link ? <LinkIcon key={launch.links?.video_link} href={launch.links?.video_link} linkType="youtube" hoverText="Video"/> : '',
-                            launch.links?.presskit ? <LinkIcon key={launch.links?.presskit} href={launch.links?.presskit} linkType="presskit" hoverText="Press kit"/> : '',
+                            launch.links?.article_link ? <LinkIcon key={launch.links?.article_link} href={launch.links?.article_link} linkType="article" /> : '',
+                            launch.links?.wikipedia ? <LinkIcon key={launch.links?.wikipedia} href={launch.links?.wikipedia} linkType="wikipedia" /> : '',
+                            launch.links?.video_link ? <LinkIcon key={launch.links?.video_link} href={launch.links?.video_link} linkType="youtube" /> : '',
+                            launch.links?.presskit ? <LinkIcon key={launch.links?.presskit} href={launch.links?.presskit} linkType="presskit" /> : '',
                             launch.links?.reddit_campaign ? <LinkIcon key={launch.links?.reddit_campaign} href={launch.links?.reddit_campaign} linkType="reddit" hoverText="Reddit: campaign"/> : '',
                             launch.links?.reddit_launch ? <LinkIcon key={launch.links?.reddit_launch} href={launch.links?.reddit_launch} linkType="reddit" hoverText="Reddit: launch"/> : '',
                             launch.links?.reddit_recovery ? <LinkIcon key={launch.links?.reddit_recovery} href={launch.links?.reddit_recovery} linkType="reddit" hoverText="Reddit: recovery"/> : '',
@@ -62,7 +55,7 @@ console.log();
                     <p><span className="details-text-heading">Flight number: </span>{launch.flight_number}</p>
                     <p><span className="details-text-heading">Details: </span>{launch.details ? launch.details : '-' }</p>
                     <p><span className="details-text-heading">Ships used: </span>{launch.ships?.length>0 ? launch.ships?.map(ship => <a href={'/ships/'+ship} key={ship}>{ship + ', '}</a> ) : '-'}</p>
-                </LaunchDataBlock>
+                </div>
             </div>
 
             {launch.links?.youtube_id || launch.links?.flickr_images[0] ? <h2>Media:</h2> : ''}

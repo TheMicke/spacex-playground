@@ -12,7 +12,7 @@ function CapsuleDetailsContent(props) {
         <div className="page-content-container">
             <DefaultBackButton />
 
-            <div className="data-block data-block-thirds">
+            <div className="data-block data-block-full">
                 <h2 className="details-heading">{capsule.capsule_serial}</h2>
                 <p><span className="details-text-heading">Capsule id: </span><a href={"/dragons/"+capsule.capsule_id}>{capsule.capsule_id}</a></p>
                 <p><span className="details-text-heading">Original launch date: </span><UnixTimeConverter timestamp={capsule.original_launch_unix} /></p>
@@ -25,7 +25,7 @@ function CapsuleDetailsContent(props) {
                 <p><span className="details-text-heading">Type: </span>{capsule.type}</p>
                 <p><span className="details-text-heading">Landings: </span>{capsule.landings}</p>
                 <p><span className="details-text-heading">Reuses: </span>{capsule.reuse_count}</p>
-                <p><span className="details-text-heading">Details: </span>{capsule.details}</p>
+                <p><span className="details-text-heading">Details: </span>{capsule.details ? capsule.details : '-'}</p>
             </div>
         </div>
     );

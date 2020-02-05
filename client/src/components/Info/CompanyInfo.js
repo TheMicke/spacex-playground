@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import CompanyInfoContent from './CompanyInfoContent';
-import APIinfo from './APIinfo';
 import LoaderSpinner from '../_common/LoaderSpinner';
 
 function CompanyInfo() {

@@ -1,4 +1,5 @@
 import React from 'react';
+import LinkRow from '../_common/LinkRow';
 import LinkIcon from '../_common/LinkIcon';
 import '../_css/details-view.css';
 import '../_css/component-general.css';
@@ -22,11 +23,14 @@ function CompanyInfoContent(props) {
                 <p><span className="details-text-heading">Valuation: </span>${info.valuation}</p>
                 <p><span className="details-text-heading">Headquarters: </span>{info.headquarters?.city}, {info.headquarters?.state}</p>
                 
-                <p><span className="details-text-heading">Links: </span> <br />
-                    <LinkIcon linkType="website" href={info.links?.website} />
-                    <LinkIcon linkType="flickr" href={info.links?.flickr} />
-                    <LinkIcon linkType="twitter" href={info.links?.twitter} />
-                </p>
+                <p><span className="details-text-heading">Links: </span> <br /></p>
+                <LinkRow
+                        links={[
+                            info.links?.website ? <LinkIcon key={info.links?.website} href={info.links?.website} hoverText="Website" /> : '',
+                            info.links?.flickr ? <LinkIcon key={info.links?.flickr} href={info.links?.flickr} linkType="flickr" hoverText="Flickr" /> : '',
+                            info.links?.twitter ? <LinkIcon key={info.links?.twitter} href={info.links?.twitter} linkType="twitter" hoverText="Twitter"/> : '',
+                        ]}
+                    />
             </div>
     );
 }

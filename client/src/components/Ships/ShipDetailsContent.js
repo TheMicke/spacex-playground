@@ -12,7 +12,7 @@ function ShipDetailsContent(props) {
     return (
         <div className="page-content-container">
             <DefaultBackButton />
-            <div className="data-block data-block-thirds">
+            <div className="data-block data-block-full">
                 <h2 className="details-heading">{ship.ship_name}</h2>
                 {ship.ship_id ? <p><span className="details-text-heading">Ship id: </span>{ship.ship_id} </p> : ''}
                 {ship.active ? <p><span className="details-text-heading">Active: </span>{ship.active ? 'Yes' : 'No'}</p> : ''}
@@ -41,7 +41,7 @@ function ShipDetailsContent(props) {
                     ))}
                 </p> : ''}
 
-                {ship.url ? <p><span className="details-text-heading">Links:</span> <LinkIcon href={ship.url} /></p> : ''}
+                {ship.url ? <p><span className="details-text-heading">Links:</span> <br /> <LinkIcon href={ship.url} /></p> : ''}
             </div>
 
             {ship.image ? props.waitingForImages ? '' : <ThumbnailGrid images={shipImage} /> : ''}

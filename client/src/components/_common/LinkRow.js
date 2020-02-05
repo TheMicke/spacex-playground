@@ -6,7 +6,11 @@ const LinkRowContainer = styled.div`
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
+
+    @media screen and (min-width: 768px) {
+        justify-content: flex-start;
+    }
 `;
 
 
