@@ -6,8 +6,7 @@ function APIinfoContent(props) {
     const api = props.data;
 
     return (
-        <div className="page-content-container">
-            <div className="data-block">
+            <div className="data-block data-block-half">
                 <h2 className="details-heading">API Info</h2>
                 <p><span className="details-text-heading">Project name: </span>{api.project_name}</p>
                 <p><span className="details-text-heading">Version: </span>{api.version}</p>
@@ -19,7 +18,6 @@ function APIinfoContent(props) {
                     <a href={api.docs} target="_blank" rel="noopener noreferrer"> Docs <br /></a>
                 </p>
             </div>
-        </div> 
     );
 }
 

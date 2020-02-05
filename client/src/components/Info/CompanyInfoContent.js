@@ -1,14 +1,14 @@
 import React from 'react';
+import LinkRow from '../_common/LinkRow';
 import LinkIcon from '../_common/LinkIcon';
 import '../_css/details-view.css';
 import '../_css/component-general.css';
 
-function InfoContent(props) {
+function CompanyInfoContent(props) {
     const info = props.info;
 
     return (
-        <div className="page-content-container">
-            <div className="data-block">
+            <div className="data-block data-block-half">
                 <h2 className="details-heading">{info.name} company info</h2>
                 <p>{info.summary}</p>
                 <p><span className="details-text-heading">Founder: </span>{info.founder}</p>
@@ -23,14 +23,16 @@ function InfoContent(props) {
                 <p><span className="details-text-heading">Valuation: </span>${info.valuation}</p>
                 <p><span className="details-text-heading">Headquarters: </span>{info.headquarters?.city}, {info.headquarters?.state}</p>
                 
-                <p><span className="details-text-heading">Links: </span> <br />
-                    <LinkIcon linkType="website" href={info.links?.website} />
-                    <LinkIcon linkType="flickr" href={info.links?.flickr} />
-                    <LinkIcon linkType="twitter" href={info.links?.twitter} />
-                </p>
+                <p><span className="details-text-heading">Links: </span> <br /></p>
+                <LinkRow
+                        links={[
+                            info.links?.website ? <LinkIcon key={info.links?.website} href={info.links?.website} hoverText="Website" /> : '',
+                            info.links?.flickr ? <LinkIcon key={info.links?.flickr} href={info.links?.flickr} linkType="flickr" hoverText="Flickr" /> : '',
+                            info.links?.twitter ? <LinkIcon key={info.links?.twitter} href={info.links?.twitter} linkType="twitter" hoverText="Twitter"/> : '',
+                        ]}
+                    />
             </div>
-        </div>
     );
 }
 
-export default InfoContent;
+export default CompanyInfoContent;

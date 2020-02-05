@@ -20,8 +20,8 @@ const Image = styled.img`
     }
 
     @media screen and (min-width: 1024px) {
-        height: 225px;
-        width: 225px;
+        height: 270px;
+        width: 270px;
     }
 `;
 
@@ -31,9 +31,9 @@ function ThumbnailGrid(props) {
     });
 
     return (
-        <ImageContainer>
-            {images}
-        </ImageContainer>
+            <ImageContainer>
+                {images}
+            </ImageContainer>
     );
 }
 
