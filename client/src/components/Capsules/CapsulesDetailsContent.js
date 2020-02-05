@@ -12,7 +12,7 @@ function CapsuleDetailsContent(props) {
         <div className="page-content-container">
             <DefaultBackButton />
 
-            <div className="data-block">
+            <div className="data-block data-block-thirds">
                 <h2 className="details-heading">{capsule.capsule_serial}</h2>
                 <p><span className="details-text-heading">Capsule id: </span><a href={"/dragons/"+capsule.capsule_id}>{capsule.capsule_id}</a></p>
                 <p><span className="details-text-heading">Original launch date: </span><UnixTimeConverter timestamp={capsule.original_launch_unix} /></p>

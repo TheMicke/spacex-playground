@@ -12,7 +12,7 @@ function ShipDetailsContent(props) {
     return (
         <div className="page-content-container">
             <DefaultBackButton />
-            <div className="data-block">
+            <div className="data-block data-block-thirds">
                 <h2 className="details-heading">{ship.ship_name}</h2>
                 {ship.ship_id ? <p><span className="details-text-heading">Ship id: </span>{ship.ship_id} </p> : ''}
                 {ship.active ? <p><span className="details-text-heading">Active: </span>{ship.active ? 'Yes' : 'No'}</p> : ''}

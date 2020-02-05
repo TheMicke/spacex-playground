@@ -19,9 +19,9 @@ function APIinfo() {
     }, []);
     
     return (
-        <div>
+        <>
             { isLoadingApiInfo ? <LoaderSpinner /> : <APIinfoContent data={apiInfo} /> }
-        </div>
+        </>
     );
 }
 

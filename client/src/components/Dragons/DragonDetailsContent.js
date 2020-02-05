@@ -19,7 +19,7 @@ function DragonDetailsContent(props) {
                 <h2 className="details-heading">{dragon.name}</h2>
                 <LinkIcon href={dragon.wikipedia} linkType="wikipedia" />
                 <div className="data-block-container">
-                    <div className="data-block">
+                    <div className="data-block data-block-thirds">
                         <h3 className="details-text-heading">General</h3>
                         <p><span className="details-text-heading">First flight:</span> {dragon.first_flight}</p>
                         <p><span className="details-text-heading">ID:</span> {dragon.id}</p>
@@ -33,7 +33,7 @@ function DragonDetailsContent(props) {
                         <p><span className="details-text-heading">Dry mass:</span> {dragon.dry_mass_kg} kg | {dragon.dry_mass_lb} lb</p>
                     </div>
 
-                    <div className="data-block">
+                    <div className="data-block data-block-thirds">
                         <h3 className="details-text-heading">Thrusters</h3>
                         {dragon.thrusters?.map(thruster => 
                             <div key={'thruster'+thruster.type+thruster.thrust.kN+thrustCounter}>
@@ -49,7 +49,7 @@ function DragonDetailsContent(props) {
                         )}
                     </div>
 
-                    <div className="data-block">
+                    <div className="data-block data-block-thirds">
                         <h3 className="details-text-heading">Payload</h3>
                         <p><span className="details-text-heading">Pressurized capsule:</span> {dragon.pressurized_capsule?.payload_volume.cubic_meters} m<sup>2</sup> | {dragon.pressurized_capsule?.payload_volume.cubic_feet} ft<sup>3</sup></p>
                         <p><span className="details-text-heading">Total launch payload mass:</span> {dragon.launch_payload_mass?.kg} kg | {dragon.launch_payload_mass?.lb} lb</p>
@@ -63,7 +63,7 @@ function DragonDetailsContent(props) {
                         <p><span className="details-text-heading">Trunk cargo (unpressurized):</span> {dragon.trunk?.cargo.unpressurized_cargo ? 'Yes' : 'No'}</p>
                     </div>
 
-                    <div className="data-block">
+                    <div className="data-block data-block-thirds">
                         <h3 className="details-text-heading">Heat shield</h3>
                         <p><span className="details-text-heading">Material:</span> {dragon.heat_shield?.material}</p>
                         <p><span className="details-text-heading">Max temprature:</span> <TemperatureConverter direction="f2c" temp={dragon.heat_shield?.temp_degrees} />°c | {dragon.heat_shield?.temp_degrees}°F</p>

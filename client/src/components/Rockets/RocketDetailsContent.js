@@ -11,7 +11,7 @@ function RocketDetailsContent(props) {
         <div className="page-content-container">
             <DefaultBackButton />
             <div className="data-block-container">
-                <div className="data-block">
+                <div className="data-block data-block-thirds">
                     <h2 className="details-heading">{rocket.rocket_name}</h2>
                     <p><span className="details-text-heading">Active: </span>{rocket.active ? 'Yes' : 'No' }</p>
                     <p><span className="details-text-heading">First flight: </span>{rocket.first_flight}</p>
@@ -22,7 +22,7 @@ function RocketDetailsContent(props) {
                     
                 </div>
                 
-                <div className="data-block">
+                <div className="data-block data-block-thirds">
                     <h4 className="details-text-heading">Dimensions</h4>
                     <p><span className="details-text-heading">Height: </span>{rocket.height?.meters} m | {rocket.height?.feet} ft</p>
                     <p><span className="details-text-heading">Diameter: </span>{rocket.diameter?.meters} m | {rocket.diameter?.feet} ft</p>
@@ -33,7 +33,7 @@ function RocketDetailsContent(props) {
                     <p><span className="details-text-heading">Material: </span>{rocket.landing_legs?.material ? rocket.landing_legs?.material : '-'}</p>
                 </div>
                 
-                <div className="data-block">
+                <div className="data-block data-block-thirds">
                     <h4 className="details-text-heading">First stage</h4>
                     <p><span className="details-text-heading">Reusable: </span>{rocket.first_stage?.reusable ? 'Yes' : 'No'}</p>
                     <p><span className="details-text-heading">Engines: </span>{rocket.first_stage?.engines}</p>
@@ -43,7 +43,7 @@ function RocketDetailsContent(props) {
                     <p><span className="details-text-heading">Thrust (vacuum): </span>{rocket.first_stage?.thrust_vacuum.kN} kN | {rocket.first_stage?.thrust_vacuum.lbf} lbf</p> 
                 </div>
 
-                <div className="data-block">
+                <div className="data-block data-block-thirds">
                     <h4 className="details-text-heading">Second stage</h4>
                     <p><span className="details-text-heading">Reusable: </span>{rocket.second_stage?.reusable ? 'Yes' : 'No'}</p>
                     <p><span className="details-text-heading">Engines: </span>{rocket.second_stage?.engines}</p>

@@ -9,7 +9,7 @@ function MissionDetailsContent(props) {
     return (
         <div className="page-content-container">
             <DefaultBackButton />
-            <div className="data-block">
+            <div className="data-block data-block-thirds">
                 <h2 className="details-heading">{mission.mission_name}</h2>
                 <p><span className="details-text-heading">Mission id: <br /></span>{mission.mission_id}</p>
                 <p><span className="details-text-heading">Manufacturers: <br /></span>{mission.manufacturers}</p>

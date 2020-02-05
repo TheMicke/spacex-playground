@@ -3,12 +3,11 @@ import LinkIcon from '../_common/LinkIcon';
 import '../_css/details-view.css';
 import '../_css/component-general.css';
 
-function InfoContent(props) {
+function CompanyInfoContent(props) {
     const info = props.info;
 
     return (
-        <div className="page-content-container">
-            <div className="data-block">
+            <div className="data-block data-block-half">
                 <h2 className="details-heading">{info.name} company info</h2>
                 <p>{info.summary}</p>
                 <p><span className="details-text-heading">Founder: </span>{info.founder}</p>
@@ -29,8 +28,7 @@ function InfoContent(props) {
                     <LinkIcon linkType="twitter" href={info.links?.twitter} />
                 </p>
             </div>
-        </div>
     );
 }
 
-export default InfoContent;
+export default CompanyInfoContent;
