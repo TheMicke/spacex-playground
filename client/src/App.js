@@ -29,6 +29,8 @@ import Roadster from './components/Roadster/Roadster';
 import ShipsList from './components/Ships/ShipsList';
 import ShipDetails from './components/Ships/ShipDetails';
 
+import BackToTopButton from './components/_common/BackToTopButton';
+
 const AppContainer = styled.div`
     text-align: center;
     background-color: #fff;
@@ -43,6 +45,7 @@ function App() {
     return (
         <main>
             <AppContainer>
+                <BackToTopButton />
                 <Header />
                 <PageContainer>
                     <Switch>

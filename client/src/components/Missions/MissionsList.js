@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import LoaderSpinner from '../_common/LoaderSpinner';
 import MissionsListCard from './MissionsListCard';
-import BackToTopButton from '../_common/BackToTopButton';
 
 function MissionsList() {
     const [isLoading, setIsLoading] = useState(false);
@@ -20,7 +19,6 @@ function MissionsList() {
 
     return (
         <div>
-            <BackToTopButton />
             {isLoading ? 
             <LoaderSpinner /> 
             : 

@@ -12,7 +12,6 @@ import YoutubeVideo from '../_common/YoutubeVideo';
 
 import defaultMissionPatch from '../../images/mission_patch_placeholder.png';
 import UnixTimeConverter from '../_common/UnixTimeConverter';
-import BackToTopButton from '../_common/BackToTopButton';
 
 const MissionPatch = styled.img`
     display: block;
@@ -27,7 +26,6 @@ function LaunchDetailsContent(props) {
     return (
         <div className="page-content-container">
             <DefaultBackButton />
-            <BackToTopButton />
 
             <div className="data-block-container">
                 {launch.links?.mission_patch ? <MissionPatch src={launch.links?.mission_patch} /> : <MissionPatch src={defaultMissionPatch} placeholderPatch />}

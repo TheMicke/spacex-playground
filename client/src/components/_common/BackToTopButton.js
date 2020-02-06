@@ -21,12 +21,13 @@ const toTopButtonStyle = {
 function BackToTopButton() {
     let toTopButton = document.getElementById('backToTopBtn');
 
+
     useEffect(() => {
+        toTopButton = document.getElementById('backToTopBtn');
     }, []);
-    toTopButton = document.getElementById('backToTopBtn');
 
     const scrollFunction = () => {
-        document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ? (toTopButton.style.bottom = '30px') : (toTopButton.style.bottom = '-50px');
+        document.body.scrollTop > 230 || document.documentElement.scrollTop > 230 ? (toTopButton.style.bottom = '30px') : (toTopButton.style.bottom = '-50px');
     };
 
     const backToTop = () => {
