@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import LaunchesListCard from './LaunchesListCard';
 import LoaderSpinner from '../_common/LoaderSpinner';
 import DefaultButton from '../_common/DefaultButton';
-import BackToTopButton from '../_common/BackToTopButton';
 
 
 const TopRow = styled.div`
@@ -35,7 +34,6 @@ function LaunchesList() {
                 <DefaultButton href='/launches/latest' text='Latest launch' />
                 <DefaultButton href='/launches/next' text='Next launch' />
             </TopRow>
-            <BackToTopButton />
             {isLoading ? 
             <LoaderSpinner /> 
             : 

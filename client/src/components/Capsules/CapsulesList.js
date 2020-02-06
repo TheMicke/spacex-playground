@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import LoaderSpinner from '../_common/LoaderSpinner';
 import CapsulesListCard from './CapsulesListCard';
-import BackToTopButton from '../_common/BackToTopButton';
 
 function CapsulesList() {
     const [isLoading, setIsLoading] = useState(false);
@@ -20,7 +19,6 @@ function CapsulesList() {
 
     return (
         <div>
-            <BackToTopButton />
             {isLoading ? <LoaderSpinner /> : capsules.length > 0 && capsules.map(capsule => <CapsulesListCard key={capsule.capsule_serial} data={capsule} />)}
         </div>
     );
