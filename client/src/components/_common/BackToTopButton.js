@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import backToTopImg from '../../images/rocket-to-top.svg';
 
@@ -19,12 +19,12 @@ const toTopButtonStyle = {
 };
 
 function BackToTopButton() {
-    let toTopButton = document.getElementById('backToTopBtn');
+    const [toTopButton, setToTopButton] = useState(document.getElementById('backToTopBtn'));
 
 
     useEffect(() => {
-        toTopButton = document.getElementById('backToTopBtn');
-    }, []);
+        setToTopButton(document.getElementById('backToTopBtn'));
+    }, [toTopButton]);
 
     const scrollFunction = () => {
         document.body.scrollTop > 230 || document.documentElement.scrollTop > 230 ? (toTopButton.style.bottom = '30px') : (toTopButton.style.bottom = '-50px');
@@ -38,7 +38,7 @@ function BackToTopButton() {
     window.onscroll = () => { scrollFunction() };
 
     return (
-        <button onClick={backToTop} id="backToTopBtn" title="Back to top" style={toTopButtonStyle}>
+        <button onClick={backToTop} id="backToTopBtn" title="Back to top" style={toTopButtonStyle} >
             <img src={backToTopImg} alt="menu"/>
         </button>
 
@@ -46,3 +46,4 @@ function BackToTopButton() {
 }
 
 export default BackToTopButton;
+
