@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Lightbox from './Lightbox';
+
 const ImageContainer = styled.div`
     display: flex;
     flex-direction: row;
@@ -31,9 +33,12 @@ function ThumbnailGrid(props) {
     });
 
     return (
+        <>
             <ImageContainer>
                 {images}
             </ImageContainer>
+            <Lightbox images={props.images} currentIndex={1} />
+        </>
     );
 }
 
