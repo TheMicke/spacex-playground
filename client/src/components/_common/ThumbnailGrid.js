@@ -11,8 +11,13 @@ const ImageGridContainer = styled.div`
 `;
 
 const ImageContainer = styled.button`
-    background-color: none;
-    border: none;
+background: none;
+color: inherit;
+border: none;
+padding: 0;
+font: inherit;
+cursor: pointer;
+outline: inherit;
 `;
 
 const Image = styled.img`
