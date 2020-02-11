@@ -82,7 +82,7 @@ function Lightbox(props) {
     return (
         <LightboxContainer>
             <LightboxTopRow>
-                <LightboxCloseIcon src={closeIcon} onClick={props.toggleLightbox} />
+                <LightboxCloseIcon src={closeIcon} />
             </LightboxTopRow>
             
             <LighboxContentContainer>

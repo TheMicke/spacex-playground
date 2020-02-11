@@ -7,7 +7,6 @@ import DefaultBackButton from '../_common/DefaultBackButton';
 import UnixTimeConverter from '../_common/UnixTimeConverter';
 import LoaderSpinner from '../_common/LoaderSpinner';
 
-import Lightbox from '../_common/Lightbox';
 import LinkIcon from '../_common/LinkIcon';
 import LinkRow from '../_common/LinkRow';
 import ThumbnailGrid from '../_common/ThumbnailGrid';
