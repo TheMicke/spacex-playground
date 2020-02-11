@@ -63,6 +63,28 @@ const LightboxImage = styled.img`
 function Lightbox(props) {
     const [currentImageIndex, setCurrentImageIndex] = useState(props.currentIndex);
 
+    
+    const keyboadNavigation = (e) => {
+        switch (e.keyCode) {
+            case 27:
+                props.toggleLightbox();
+                break;
+        
+            case 39:
+                nextImage();
+                break;
+        
+            case 37:
+                prevImage();
+                break;
+        
+            default:
+                break;
+        }
+    }
+    
+    document.onkeydown = keyboadNavigation;
+
     const prevImage = () => {
         if (currentImageIndex - 1 >= 0) {
             setCurrentImageIndex(currentImageIndex - 1)
