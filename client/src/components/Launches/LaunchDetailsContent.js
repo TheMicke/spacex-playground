@@ -4,14 +4,14 @@ import '../_css/details-view.css';
 import '../_css/component-general.css';
 import DefaultBackButton from '../_common/DefaultBackButton';
 
+import UnixTimeConverter from '../_common/UnixTimeConverter';
 import LoaderSpinner from '../_common/LoaderSpinner';
+
 import LinkIcon from '../_common/LinkIcon';
 import LinkRow from '../_common/LinkRow';
 import ThumbnailGrid from '../_common/ThumbnailGrid';
 import YoutubeVideo from '../_common/YoutubeVideo';
-
 import defaultMissionPatch from '../../images/mission_patch_placeholder.png';
-import UnixTimeConverter from '../_common/UnixTimeConverter';
 
 const MissionPatch = styled.img`
     display: block;

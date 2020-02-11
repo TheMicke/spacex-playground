@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const ImageContainer = styled.div`
+import Lightbox from './Lightbox';
+
+const ImageGridContainer = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+`;
+
+const ImageContainer = styled.button`
+    background-color: none;
+    border: none;
 `;
 
 const Image = styled.img`
@@ -26,14 +33,25 @@ const Image = styled.img`
 `;
 
 function ThumbnailGrid(props) {
-    const images = props.images.map(imageUrl => {
-        return <a key={imageUrl} href={imageUrl} target="_blank" rel="noopener noreferrer"><Image src={imageUrl} /></a>
+    const [showLightbox, setShowLightbox] = useState(false);
+    const [imageIndex, setImageIndex] = useState(null);
+
+    const toggleLightbox = (index) => {
+        setImageIndex(index);
+        setShowLightbox(!showLightbox);
+    };
+
+    const images = props.images.map((imageUrl, index) => {
+        return <ImageContainer key={imageUrl} onClick={() => {toggleLightbox(index)}}><Image src={imageUrl} /></ImageContainer>
     });
 
     return (
-            <ImageContainer>
+        <>
+            <ImageGridContainer>
                 {images}
-            </ImageContainer>
+            </ImageGridContainer>
+            {showLightbox ? <Lightbox images={props.images} currentIndex={imageIndex} toggleLightbox={toggleLightbox} /> : ''}
+        </>
     );
 }
 
