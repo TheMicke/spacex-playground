@@ -3,13 +3,19 @@ import styled from 'styled-components';
 import '../_css/list-view.css';
 
 import UnixTimeConverter from '../_common/UnixTimeConverter';
-import defaultPatch from '../../images/spacex-x.png';
+import defaultPatch from '../../images/mission_patch_placeholder.png';
 import iconSuccess from '../../images/icon_success.svg';
 import iconFail from '../../images/icon_fail.svg';
 
 const MissionPatch = styled.img`
     max-width: 100px;
 `;
+
+const CardTitle = styled.h3`
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+`
 
 const IconLaunchListCard = styled.img`
     max-width: 25px;
@@ -30,9 +36,9 @@ function LaunchesListCard(props) {
         <a href={'/launches/' + props.data.flight_number} >
             <div className="list-card">
                 {props.data.links.mission_patch_small ? <MissionPatch src={props.data.links.mission_patch_small} /> : <MissionPatch src={defaultPatch} />}
-                <h3>{props.data.mission_name}</h3>
+                <CardTitle>{props.data.mission_name}</CardTitle>
                 <p>
-                    <span className="card-heading">Launch date{props.data.launch_date_unix-(Math.floor(Date.now() / 1000)) > 0 ? '(planned): ' : ': '}</span>
+                    <span className="card-heading">Launch {props.data.launch_date_unix-(Math.floor(Date.now() / 1000)) > 0 ? '(planned): ' : ': '}</span>
                     <UnixTimeConverter timestamp={props.data.launch_date_unix} />
                 </p>
 

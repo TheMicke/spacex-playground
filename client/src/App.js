@@ -21,6 +21,7 @@ import LaunchPadsList from './components/LaunchPads/LaunchPadsList';
 import LaunchPadDetails from './components/LaunchPads/LaunchPadDetails';
 import MissionsList from './components/Missions/MissionsList';
 import MissionDetails from './components/Missions/MissionDetails';
+import PageNotFound from './components/PageNotFound';
 import PayloadsList from './components/Payloads/PayloadsList';
 import PayloadDetails from './components/Payloads/PayloadDetails';
 import RocketsList from './components/Rockets/RocketsList';
@@ -74,6 +75,7 @@ function App() {
                         <Route exact path="/roadster" component={Roadster} />
                         <Route exact path="/ships" component={ShipsList} />
                         <Route exact path="/ships/:shipId" component={ShipDetails} />
+                        <Route path="*" component={PageNotFound} />
                     </Switch>
                 </PageContainer>
                 <Footer />
