@@ -21,7 +21,7 @@ import LaunchPadsList from './components/LaunchPads/LaunchPadsList';
 import LaunchPadDetails from './components/LaunchPads/LaunchPadDetails';
 import MissionsList from './components/Missions/MissionsList';
 import MissionDetails from './components/Missions/MissionDetails';
-import PageNotFound from './components/PageNotFound';
+import PageNotFound from './components/PageNotFound/PageNotFound';
 import PayloadsList from './components/Payloads/PayloadsList';
 import PayloadDetails from './components/Payloads/PayloadDetails';
 import RocketsList from './components/Rockets/RocketsList';
