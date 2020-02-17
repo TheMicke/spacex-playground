@@ -11,10 +11,10 @@ const PageNotFoundImage = styled.img`
 function PageNotFound() {
 
     return(
-        <>
+        <div>
             <PageNotFoundImage src={notFoundImg} />
             <h2>404 - Page not found!</h2>
-        </>
+        </div>
     )
 }
 
