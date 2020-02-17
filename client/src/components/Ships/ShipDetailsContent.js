@@ -11,7 +11,7 @@ function ShipDetailsContent(props) {
 
     return (
         <div className="page-content-container">
-            <DefaultBackButton />
+            <DefaultBackButton url="/ships" />
             <div className="data-block data-block-full">
                 <h2 className="details-heading">{ship.ship_name}</h2>
                 {ship.ship_id ? <p><span className="details-text-heading">Ship id: </span>{ship.ship_id} </p> : ''}

@@ -14,7 +14,7 @@ function DragonDetailsContent(props) {
 
     return (
         <div className="page-content-container">
-            <DefaultBackButton />
+            <DefaultBackButton url="/dragons"/>
             <div>
                 <h2 className="details-heading">{dragon.name}</h2>
                 <LinkIcon href={dragon.wikipedia} linkType="wikipedia" />

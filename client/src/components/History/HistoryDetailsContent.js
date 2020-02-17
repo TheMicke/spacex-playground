@@ -12,7 +12,7 @@ function HistoryDetailsContent(props) {
 
     return (
         <div className="page-content-container">
-            <DefaultBackButton />
+            <DefaultBackButton url="/history"/>
             <div className="data-block data-block-full">
                 <h2 className="details-heading">{history.title}</h2>
                 <LinkRow links={[

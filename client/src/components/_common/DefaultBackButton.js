@@ -29,10 +29,14 @@ const ButtonText = styled.p`
 function DefaultButton(props) {
     const goBack = () => {
         window.history.back();
-    }
+    };
+
+    const doNothing = () => {
+        return;
+    };
 
     return (
-        <a href="#goBack" onClick={goBack}>
+        <a href={props.url ? props.url : '#goBack'} onClick={!props.url ? goBack : doNothing }>
             <DefaultBackButtonContainer>
                 <ButtonText>Go back</ButtonText>
             </DefaultBackButtonContainer>

@@ -17,6 +17,8 @@ const MissionPatch = styled.img`
     display: block;
     width: 90%;
     max-width: 350px;
+    height: auto;
+    max-height: 350px;
     margin: 25px auto;
 `;
 
@@ -25,7 +27,7 @@ function LaunchDetailsContent(props) {
 
     return (
         <div className="page-content-container">
-            <DefaultBackButton />
+            <DefaultBackButton url="/launches" />
 
             <div className="data-block-container">
                 {launch.links?.mission_patch ? <MissionPatch src={launch.links?.mission_patch} /> : <MissionPatch src={defaultMissionPatch} placeholderPatch />}

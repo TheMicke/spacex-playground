@@ -7,7 +7,7 @@ function PayloadDetailsContent(props) {
     const payload = props.payload;
     return (
         <div className="page-content-container">
-            <DefaultBackButton />
+            <DefaultBackButton url="/payloads" />
             <div className="data-block-container">
                 <div className="data-block data-block-half">
                     <h2 className="details-heading">{payload.payload_id}</h2>
