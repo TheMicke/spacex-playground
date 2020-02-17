@@ -15,6 +15,7 @@ const LightboxContainer = styled.div`
     height: 100%;
     background-color: rgba(0,0,0,.75);
     color: #f0f;
+    z-index: 1000;
 `;
 
 const LightboxTopRow = styled.div`
@@ -42,6 +43,7 @@ const LighboxContentContainer = styled.div`
     align-items: center;
     height: 100%;
     width: 100vw;
+    margin-top: -50px;
 `;
 
 const LightboxNextPrevIcon = styled.img`
@@ -56,12 +58,37 @@ const LightboxNextPrevIcon = styled.img`
 `;
 
 const LightboxImage = styled.img`
+    display: block;
     max-width: 90%;
     max-height: 90%;
+    width: auto;
+    height: auto;
 `;
 
 function Lightbox(props) {
     const [currentImageIndex, setCurrentImageIndex] = useState(props.currentIndex);
+
+    
+    const keyboadNavigation = (e) => {
+        switch (e.keyCode) {
+            case 27:
+                props.toggleLightbox();
+                break;
+        
+            case 39:
+                nextImage();
+                break;
+        
+            case 37:
+                prevImage();
+                break;
+        
+            default:
+                break;
+        }
+    }
+    
+    document.onkeydown = keyboadNavigation;
 
     const prevImage = () => {
         if (currentImageIndex - 1 >= 0) {

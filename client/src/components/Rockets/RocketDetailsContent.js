@@ -9,7 +9,7 @@ function RocketDetailsContent(props) {
 
     return (
         <div className="page-content-container">
-            <DefaultBackButton />
+            <DefaultBackButton url="/rockets" />
             <div className="data-block-container">
                 <div className="data-block data-block-thirds">
                     <h2 className="details-heading">{rocket.rocket_name}</h2>
