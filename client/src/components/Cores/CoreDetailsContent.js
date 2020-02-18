@@ -9,7 +9,10 @@ function CoreDetailsContent(props) {
 
     return (
         <div className="page-content-container">
-            <DefaultBackButton url="/cores"/>
+            <div className="only-back-button">
+                <DefaultBackButton url="/cores"/>
+            </div>
+            
             <div className="data-block data-block-full">
                 <h2 className="details-heading">{core.core_serial}</h2>
                 <p><span className="details-text-heading">Status: </span>{core.status}</p>

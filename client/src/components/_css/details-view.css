@@ -4,6 +4,20 @@
     justify-content: flex-start;
 }
 
+.details-view-top-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.only-imperial-toggle {
+    justify-content: flex-end;
+}
+
+.only-back-button {
+    justify-content: flex-start;
+}
+
 .data-block {
     margin-bottom: 50px;
     text-align: left;

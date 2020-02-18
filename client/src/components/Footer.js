@@ -39,16 +39,28 @@ const FooterNavContainer = styled.div`
 const FooterNavLeftBlock = styled.div`
     display: inline-flex;
     flex-direction: column;
+
+    a, a:hover, a:active, a:visited {
+        margin-bottom: 5px;
+    }
 `;
 
 const FooterNavCenterBlock = styled.div`
     display: inline-flex;
     flex-direction: column;
+
+    a, a:hover, a:active, a:visited {
+        margin-bottom: 5px;
+    }
 `;
 
 const FooterNavRightBlock = styled.div`
     display: inline-flex;
     flex-direction: column;
+
+    a, a:hover, a:active, a:visited {
+        margin-bottom: 5px;
+    }
 `;
 
 function Footer() {

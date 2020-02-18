@@ -14,8 +14,10 @@ function PayloadDetailsContent(props) {
 
     return (
         <div className="page-content-container">
-            <DefaultBackButton url="/payloads" />
-            <ImperialToggle toggle={toggleUseMetric} usingMetric={useMetric} />
+            <div className="details-view-top-row">
+                <DefaultBackButton url="/payloads" />
+                <ImperialToggle toggle={toggleUseMetric} usingMetric={useMetric} />
+            </div>
             <div className="data-block-container">
                 <div className="data-block data-block-half">
                     <h2 className="details-heading">{payload.payload_id}</h2>
@@ -26,7 +28,7 @@ function PayloadDetailsContent(props) {
                     <p><span className="details-text-heading">Payload mass: </span>{payload.payload_mass_kg ? useMetric ? payload.payload_mass_kg + ' kg' : payload.payload_mass_lbs + ' lbs' : '-'}</p>
                     <p><span className="details-text-heading">Orbit: </span>{payload.orbit} - {payload.orbit_params?.regime}</p>
                     <p><span className="details-text-heading">Expected lifespan: </span>{payload.orbit_params?.lifespan_years ? payload.orbit_params?.lifespan_years + ' years.' : '-' }</p>
-                    <p><span className="details-text-heading">Norad id: </span>{payload.norad_id}</p>
+                    <p><span className="details-text-heading">Norad id(s): </span>{payload.norad_id?.map(id => (<span key={id}>{id + ', '}</span>))}</p>
                 </div>
             </div>
         </div>
@@ -34,3 +36,5 @@ function PayloadDetailsContent(props) {
 }
 
 export default PayloadDetailsContent;
+
+

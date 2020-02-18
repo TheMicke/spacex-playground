@@ -5,7 +5,7 @@ function RocketsListCard(props) {
     return (
         <a href={'/rockets/' + props.data.rocket_id}>
             <div className="list-card">
-                <h3>{props.data.rocket_name}</h3>
+                <h3 className="list-card-title">{props.data.rocket_name}</h3>
             </div>
         </a>
     );

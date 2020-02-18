@@ -27,7 +27,9 @@ function LaunchDetailsContent(props) {
 
     return (
         <div className="page-content-container">
-            <DefaultBackButton url="/launches" />
+            <div className="only-back-button">
+                <DefaultBackButton url="/launches" />
+            </div>
 
             <div className="data-block-container">
                 {launch.links?.mission_patch ? <MissionPatch src={launch.links?.mission_patch} /> : <MissionPatch src={defaultMissionPatch} placeholderPatch />}
