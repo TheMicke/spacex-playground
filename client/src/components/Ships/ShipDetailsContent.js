@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ThumbnailGrid from '../_common/ThumbnailGrid';
 import LinkIcon from '../_common/LinkIcon';
 import '../_css/details-view.css';
 import '../_css/component-general.css';
 import DefaultBackButton from '../_common/DefaultBackButton';
+import ImperialToggle from '../_common/ImperialToggle';
 
 function ShipDetailsContent(props) {
     const ship = props.ship;
     const shipImage = [ship.image];
+    const [useMetric, setUseMetric] = useState(true);
+    
+    const toggleUseMetric = () => {
+        setUseMetric(!useMetric);
+    }
 
     return (
         <div className="page-content-container">
             <DefaultBackButton url="/ships" />
+            <ImperialToggle toggle={toggleUseMetric} usingMetric={useMetric} />
+
             <div className="data-block data-block-full">
                 <h2 className="details-heading">{ship.ship_name}</h2>
                 {ship.ship_id ? <p><span className="details-text-heading">Ship id: </span>{ship.ship_id} </p> : ''}
@@ -19,7 +27,7 @@ function ShipDetailsContent(props) {
                 {ship.type !== '' ? <p><span className="details-text-heading">Type: </span>{ship.ship_type}</p> : ''}
                 {ship.roles ? <p><span className="details-text-heading">Roles: </span>{ship.ship_type}</p> : ''}
                 {ship.year_built ? <p><span className="details-text-heading">Built: </span>{ship.year_built}</p> : ''}
-                {ship.weight_kg ? (<p><span className="details-text-heading">Weight: </span>{ship.weight_kg} kg | {ship.weight_lbs} lbs</p>) : ''}
+                {ship.weight_kg ? (<p><span className="details-text-heading">Weight: </span>{useMetric ? ship.weight_kg + ' kg' : ship.weight_lbs + ' lbs'}</p>) : ''}
                 {ship.home_port ? <p><span className="details-text-heading">Home port: </span>{ship.home_port}</p> : ''}
 
                 {ship.attempted_catches ? <p><span className="details-text-heading">Attempted catches: </span>{ship.attempted_catches} </p> : ''}
