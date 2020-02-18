@@ -16,11 +16,13 @@ function RoadsterContent(props) {
 
     return (
         <div className="page-content-container">
-            <ImperialToggle toggle={toggleUseMetric} usingMetric={useMetric} />
+            <div className="details-view-top-row only-imperial-toggle">
+                <ImperialToggle toggle={toggleUseMetric} usingMetric={useMetric} />
+            </div>
+            
             <div className="data-block data-block-full">
                 <h2 className="details-heading">{roadster.name}</h2>
-                <p><span className="details-text-heading">Launch date: </span><UnixTimeConverter timestamp={roadster.launch_date_unix} />
-                </p>
+                <p><span className="details-text-heading">Launch date: </span><UnixTimeConverter timestamp={roadster.launch_date_unix} /></p>
 
                 <p><span className="details-text-heading">Launch mass: </span>{useMetric ? roadster.launch_mass_kg + ' kg' : roadster.launch_mass_lbs + ' lbs'}</p>
                 <p><span className="details-text-heading">Speed: </span>{useMetric ? Math.round(roadster.speed_kph) + ' km/h' : Math.round(roadster.speed_mph) + ' mph'}</p>

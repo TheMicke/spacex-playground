@@ -17,7 +17,13 @@
     transition: background 0.2s ease-in, color 0.2s ease-in;
 }
 
-.card-heading {
+.list-card-title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.list-card-heading {
     font-weight: 700
 }
 

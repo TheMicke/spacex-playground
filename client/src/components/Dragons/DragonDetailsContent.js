@@ -21,8 +21,10 @@ function DragonDetailsContent(props) {
 
     return (
         <div className="page-content-container">
-            <DefaultBackButton url="/dragons"/>
-            <ImperialToggle toggle={toggleUseMetric} usingMetric={useMetric} />
+            <div className="details-view-top-row">
+                <DefaultBackButton url="/dragons"/>
+                <ImperialToggle toggle={toggleUseMetric} usingMetric={useMetric} />
+            </div>
             <div>
                 <h2 className="details-heading">{dragon.name}</h2>
                 <LinkIcon href={dragon.wikipedia} linkType="wikipedia" />

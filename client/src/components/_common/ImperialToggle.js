@@ -1,10 +1,11 @@
 import React from 'react';
+import DefaultButtonOnClick from './DefaultButtonOnClick';
 
 function ImperialToggle(props) {
 
     return (
         <div>
-            <button onClick={props.toggle}>{props.usingMetric ? 'Show imperial' : 'Show metric'}</button>
+            <DefaultButtonOnClick onClick={props.toggle} text={props.usingMetric ? 'Show imperial' : 'Show metric'} />
         </div>
     )
 }

@@ -10,7 +10,9 @@ function CapsuleDetailsContent(props) {
     
     return (
         <div className="page-content-container">
-            <DefaultBackButton url="/capsules"/>
+            <div className="only-back-button">
+                <DefaultBackButton url="/capsules"/>
+            </div>
 
             <div className="data-block data-block-full">
                 <h2 className="details-heading">{capsule.capsule_serial}</h2>

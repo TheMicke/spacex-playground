@@ -11,15 +11,11 @@ const MissionPatch = styled.img`
     max-width: 100px;
 `;
 
-const CardTitle = styled.h3`
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden; 
-`
-
 const IconLaunchListCard = styled.img`
     max-width: 25px;
     max-height: 25px;
+    margin-bottom: -8px;
+    margin-left: 5px;
 `;
 
 function LaunchesListCard(props) {
@@ -36,14 +32,14 @@ function LaunchesListCard(props) {
         <a href={'/launches/' + props.data.flight_number} >
             <div className="list-card">
                 {props.data.links.mission_patch_small ? <MissionPatch src={props.data.links.mission_patch_small} /> : <MissionPatch src={defaultPatch} />}
-                <CardTitle>{props.data.mission_name}</CardTitle>
+                <h3 className="list-card-title">{props.data.mission_name}</h3>
                 <p>
-                    <span className="card-heading">Launch {props.data.launch_date_unix-(Math.floor(Date.now() / 1000)) > 0 ? '(planned): ' : ': '}</span>
+                    <span className="list-card-heading">Launch {props.data.launch_date_unix-(Math.floor(Date.now() / 1000)) > 0 ? '(planned): ' : ': '}</span>
                     <UnixTimeConverter timestamp={props.data.launch_date_unix} />
                 </p>
 
                 <p className="capsule-data">
-                    <span className="card-heading">Launch success: </span> {launchSuccessIcon}
+                    <span className="list-card-heading">Launch success: </span> {launchSuccessIcon}
                 </p>
             </div>
         </a>

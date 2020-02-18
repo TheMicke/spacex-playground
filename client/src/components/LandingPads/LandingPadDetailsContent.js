@@ -9,7 +9,10 @@ function LandingPadDetailsContent(props) {
 
     return (
         <div className="page-content-container">
-            <DefaultBackButton url="/landing_pads"/>
+            <div className="only-back-button">
+                <DefaultBackButton url="/landing_pads"/>
+            </div>
+            
             <div className="data-block data-block-full">
                 <h2 className="details-heading">{landingPad.full_name}</h2>
                 <p><span className="details-text-heading">Landing Pad id: </span>{landingPad.id}</p>

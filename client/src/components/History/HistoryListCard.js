@@ -7,9 +7,9 @@ function DragonsListCard(props) {
     return (
         <a href={'/history/' + props.data.id}>
             <div className="list-card">
-                <h3>{props.data.title}</h3>
+                <h3 className="list-card-title">{props.data.title}</h3>
                 <p>
-                    <span className="card-heading">Date: </span>
+                    <span className="list-card-heading">Date: </span>
                     <UnixTimeConverter timestamp={props.data.event_date_unix} />
                 </p>
             </div>

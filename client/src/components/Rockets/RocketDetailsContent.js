@@ -14,9 +14,11 @@ function RocketDetailsContent(props) {
     }
     return (
         <div className="page-content-container">
-            <DefaultBackButton url="/rockets" />
-            <ImperialToggle toggle={toggleUseMetric} usingMetric={useMetric} />
-
+            <div className="details-view-top-row">
+                <DefaultBackButton url="/rockets" />
+                <ImperialToggle toggle={toggleUseMetric} usingMetric={useMetric} />
+            </div>
+            
             <div className="data-block-container">
                 <div className="data-block data-block-thirds">
                     <h2 className="details-heading">{rocket.rocket_name}</h2>
