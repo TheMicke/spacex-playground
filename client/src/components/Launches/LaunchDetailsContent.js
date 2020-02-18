@@ -41,9 +41,9 @@ function LaunchDetailsContent(props) {
                             launch.links?.wikipedia ? <LinkIcon key={launch.links?.wikipedia} href={launch.links?.wikipedia} linkType="wikipedia" /> : '',
                             launch.links?.video_link ? <LinkIcon key={launch.links?.video_link} href={launch.links?.video_link} linkType="youtube" /> : '',
                             launch.links?.presskit ? <LinkIcon key={launch.links?.presskit} href={launch.links?.presskit} linkType="presskit" /> : '',
-                            launch.links?.reddit_campaign ? <LinkIcon key={launch.links?.reddit_campaign} href={launch.links?.reddit_campaign} linkType="reddit" hoverText="Reddit: campaign"/> : '',
-                            launch.links?.reddit_launch ? <LinkIcon key={launch.links?.reddit_launch} href={launch.links?.reddit_launch} linkType="reddit" hoverText="Reddit: launch"/> : '',
-                            launch.links?.reddit_recovery ? <LinkIcon key={launch.links?.reddit_recovery} href={launch.links?.reddit_recovery} linkType="reddit" hoverText="Reddit: recovery"/> : '',
+                            launch.links?.reddit_campaign ? <LinkIcon key={launch.links?.reddit_campaign} href={launch.links?.reddit_campaign} linkType="reddit" title="Reddit: campaign"/> : '',
+                            launch.links?.reddit_launch ? <LinkIcon key={launch.links?.reddit_launch} href={launch.links?.reddit_launch} linkType="reddit" title="Reddit: launch"/> : '',
+                            launch.links?.reddit_recovery ? <LinkIcon key={launch.links?.reddit_recovery} href={launch.links?.reddit_recovery} linkType="reddit" title="Reddit: recovery"/> : '',
                         ]}
                     />
 
@@ -51,7 +51,10 @@ function LaunchDetailsContent(props) {
                     <p><span className="details-text-heading">Launch date </span>{ 
                     (Math.floor(Date.now()/1000)) < launch.launch_date_unix ? '(planned): ' : '' }<UnixTimeConverter timestamp={launch.launch_date_unix} />
                     </p>
-                    { (Math.floor(Date.now()/1000)) > launch.launch_date_unix ? '' : <p><span className="details-text-heading">Launch success: </span>{launch.launch_success ? 'Yes' : 'No. Reason: ' + launch.launch_failure_details?.reason}</p>}
+                    
+                    { (Math.floor(Date.now()/1000)) < launch.launch_date_unix ? '' : <p><span className="details-text-heading">Launch success: </span>{launch.launch_success ? 'Yes' : 'No.'}</p>}
+                    { launch.launch_success  ? '' : <p><span className="details-text-heading">Reason: </span>{launch.launch_failure_details?.reason}</p>}
+                    
                     <p><span className="details-text-heading">Rocket: </span><a href={"/rockets/" + launch.rocket?.rocket_id}>{launch.rocket?.rocket_name}</a></p>
                     <p><span className="details-text-heading">Launch site: </span> <a href={"/launch_pads/" + launch.launch_site?.site_id }>{launch.launch_site?.site_name_long + ' (' + launch.launch_site?.site_name + ')'}</a></p>
                     <p><span className="details-text-heading">Flight number: </span>{launch.flight_number}</p>
