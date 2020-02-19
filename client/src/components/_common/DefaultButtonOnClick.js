@@ -23,6 +23,7 @@ const ButtonContainer = styled.div`
 
 const ButtonText = styled.p`
     line-height: 0.75;
+    text-align: center;
 `;
 
 function DefaultButtonOnClick(props) {

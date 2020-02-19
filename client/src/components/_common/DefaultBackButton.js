@@ -23,6 +23,7 @@ const DefaultBackButtonContainer = styled.div`
 
 const ButtonText = styled.p`
     line-height: 0.75;
+    text-align: center;
 `;
 
 
