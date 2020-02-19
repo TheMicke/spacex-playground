@@ -1,31 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import LoaderSpinner from '../_common/LoaderSpinner';
-
-
 import HistoryListCard from './HistoryListCard';
+import lsh from '../../modules/localStorageHandler';
+import CacheInfo from '../_common/CacheInfo';
 
 function HistoryList() {
     const [isLoading, setIsLoading] = useState(false);
     const [histories, setHistories] = useState([]);
 
+    async function fetchData() {
+        setIsLoading(true)
+        await fetch('/api/v3/history')
+        .then(res => res.json())
+        .then(data => setHistories(data));
+        setIsLoading(false);
+    }
+    
     useEffect(() => {
-        async function fetchData() {
-            setIsLoading(true)
-            await fetch('/api/v3/history')
-            .then(res => res.json())
-            .then(data => setHistories(data));
-            setIsLoading(false);
+        if( histories.length === 0) {
+            if (!lsh.get('histories')) {
+                fetchData();
+            } else {
+                setHistories(lsh.get('histories'))
+            }
+
+        } else {
+            if(!lsh.get('histories')) {
+                lsh.set('histories', histories, 21600000)
+            }
         }
-        fetchData();
-    }, []);
+    }, [histories]);
 
     return (
         <div>
-            {isLoading ? 
-            <LoaderSpinner /> 
-            : 
-            histories.length>0 && histories.map(history => <HistoryListCard key={history.id} data={history} />)
-            }
+            <CacheInfo dataKey='histories' />
+            {isLoading ? <LoaderSpinner /> : histories.length>0 && histories.map(history => <HistoryListCard key={history.id} data={history} />)}
         </div>
     );
 }
