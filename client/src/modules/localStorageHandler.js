@@ -1,4 +1,4 @@
-// https://www.npmjs.com/package/localstorage-ttl
+// modified version of https://www.npmjs.com/package/localstorage-ttl
 
 const ls = {
     set: function (variable, value, ttl_ms) {
