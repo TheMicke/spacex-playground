@@ -13,4 +13,4 @@ Browse data from the Space X API
 ## Screenshots
 ![Start page](screenshots/sxpg1.jpg)
 ![Launches list](screenshots/sxpg2.jpg)
-![Launches details](screenshots/launches-details.jpg)
+![Launches details](screenshots/launch-details.jpg)
